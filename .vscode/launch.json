@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Dev",
+      "program": "lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=ENV=dev",
+        "--dart-define=BASE_API_URL=https://medznat-ru.demo.brainvire.dev/api/"
+      ]
+    },
+    {
+      "name": "Prod",
+      "program": "lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=ENV=dev",
+        "--dart-define=BASE_API_URL=https://medznat-ru.demo.brainvire.dev/api/"
+      ]
+    },
+    {
+      "name": "Stage",
+      "program": "lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=ENV=dev",
+        "--dart-define=BASE_API_URL=https://medznat-ru.demo.brainvire.dev/api/"
+      ]
+    }
+  ]
+}
