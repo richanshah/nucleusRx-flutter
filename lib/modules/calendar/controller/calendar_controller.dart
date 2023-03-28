@@ -27,7 +27,7 @@ class CalendarController extends BaseGetxController {
   @override
   void onControllerInit() {
     super.onControllerInit();
-    dashboardController =
+  /*  dashboardController =
         Get.find<DashboardController>(tag: (DashboardPage).toString());
     today = DateTime.now();
     firstDay = DateTime(today.year, DateTime.january, 1);
@@ -47,7 +47,7 @@ class CalendarController extends BaseGetxController {
       equals: isSameDay,
       hashCode: getHashCode,
     )..addAll(eventSource);
-    selectedDay = focusedDay;
+    selectedDay = focusedDay;*/
   }
 
   void onBackPressed() {

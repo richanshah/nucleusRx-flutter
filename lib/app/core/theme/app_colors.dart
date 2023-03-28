@@ -27,7 +27,7 @@ abstract class AppColors {
   static final materialBlack = createMaterialColor(Colors.black);
 
   static final primary = createMaterialColor(Colors.white);
-  static final onPrimary = createMaterialColor(Colors.black);
+  static final onPrimary = createMaterialColor(Colors.white);
 
   static final primaryContainer = primary;
   static final onPrimaryContainer = onPrimary;

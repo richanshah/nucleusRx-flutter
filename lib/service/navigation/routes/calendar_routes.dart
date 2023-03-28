@@ -6,7 +6,7 @@ class CalendarRoutes {
   static final routes = [
     GetPage(
       name: AppPaths.calendar,
-      page: CalendarPage.new,
+      page: MedSummaryPage.new,
       preventDuplicates: true,
       binding: CalendarBindings(),
       // middlewares: [AuthMiddleWare()],

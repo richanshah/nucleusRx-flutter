@@ -69,7 +69,7 @@ abstract class MyAppTheme {
   static AppBarTheme getAppBarTheme() {
     return AppBarTheme(
       color: appColorScheme.primary,
-      centerTitle: true,
+      centerTitle: false,
       actionsIconTheme: IconThemeData(
           color: appColorScheme.onPrimary, size: Dimens.iconSizeRegular),
       shadowColor: AppColors.appBarShadow,
@@ -259,7 +259,7 @@ abstract class MyAppTheme {
       elevation: Dimens.spaceXSmall,
       backgroundColor: appColorScheme.secondary,
       shape: RoundedRectangleBorder(
-          borderRadius: Dimens.radiusXLarge.borderRadius),
+          borderRadius: Dimens.radiusNormal.borderRadius),
       disabledElevation: Dimens.zero,
       extendedIconLabelSpacing: Dimens.spaceXLarge,
       splashColor: appColorScheme.primary.withOpacity(0.14),

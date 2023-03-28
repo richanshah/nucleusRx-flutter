@@ -106,5 +106,5 @@ class CalendarView extends BaseGetView<CalendarController> {
   }
 
   @override
-  String? getTag() => (CalendarPage).toString();
+  String? getTag() => (MedSummaryPage).toString();
 }

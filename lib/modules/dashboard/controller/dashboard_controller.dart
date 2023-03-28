@@ -52,7 +52,7 @@ class DashboardController extends BaseGetxController {
             ),
           ),
         ),
-       /* BottomNavigationBarItem(
+        BottomNavigationBarItem(
           icon: Assets.svgs.icMessages.svg(
             height: 20.7.h,
           ),
@@ -77,7 +77,7 @@ class DashboardController extends BaseGetxController {
               BlendMode.srcATop,
             ),
           ),
-        ),*/
+        ),
       ];
   var currentIndex = 0.obs;
 

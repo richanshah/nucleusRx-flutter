@@ -1,2 +1,2 @@
 export 'widgets/widgets.dart';
-export 'alerts_page.dart';
+export 'wellness_page.dart';

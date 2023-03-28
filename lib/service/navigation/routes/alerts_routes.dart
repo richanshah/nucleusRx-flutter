@@ -6,7 +6,7 @@ class AlertsRoutes {
   static final routes = [
     GetPage(
       name: AppPaths.alerts,
-      page: AlertsPage.new,
+      page: WellnessPage.new,
       preventDuplicates: true,
       binding: AlertsBindings(),
       // middlewares: [AuthMiddleWare()],

@@ -12,7 +12,7 @@ export 'package:json_annotation/json_annotation.dart';
 export 'package:flutter/gestures.dart';
 export 'package:form_field_validator/form_field_validator.dart';
 export 'package:table_calendar/table_calendar.dart';
-
+export 'package:flutter_svg/svg.dart';
 
 export '../gen/assets.gen.dart';
 export '../app/app.dart';
@@ -21,3 +21,4 @@ export '../modules/modules.dart';
 export '../service/service.dart';
 export '../utils/utils.dart';
 export '../utils/main_app_bar.dart';
+export '../utils/custom_drawer.dart';

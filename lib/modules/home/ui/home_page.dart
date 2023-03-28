@@ -39,8 +39,8 @@ class HomePage extends BaseGetView<HomeController> {
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
+      drawer: const CustomDrawer(),
       body: Column(
-
         mainAxisSize: MainAxisSize.min,
         children: [
         /*  MainAppBar(

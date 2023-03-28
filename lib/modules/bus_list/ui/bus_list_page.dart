@@ -11,12 +11,12 @@ class BusListPage extends BaseGetView<BusListController> {
         Expanded(
           child: ListView.builder(
             itemBuilder: (context, index) {
-              return ChildAndBusListItem(
+              return DoseListItem(
                 index: index,
-                onDeleteTap: (index) {
+                onNextTap: (index) {
                   Get.dialog(
                     CustomDialog(
-                      name: 'JPBUS14',
+                      name: 'Dose Item Abc',
                       nickName: 'Nicknames',
                       description: AppString.areYouSureDeleteBusRoute.tr,
                       onNoTap: () {

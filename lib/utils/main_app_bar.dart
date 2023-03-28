@@ -9,16 +9,19 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: AppColors.primaryColor,
-        title:  Text(title),
-        leading: GestureDetector(
-          onTap: () => Get.back(),
-          child: Icon(Icons.arrow_back,
-              color: AppColors.white, textDirection: TextDirection.ltr),
-        ));
+    return Center(
+      child: AppBar(
+        backgroundColor: AppColors.primaryColor,
+          titleTextStyle: AppStyles.textMedium,
+          title:  Text(title),
+          leading: GestureDetector(
+            onTap: () => Get.back(),
+            child: Icon(Icons.arrow_back,
+                color: AppColors.white, textDirection: TextDirection.ltr),
+          )),
+    );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight-5);
 }

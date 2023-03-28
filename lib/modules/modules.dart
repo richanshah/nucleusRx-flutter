@@ -1,6 +1,6 @@
 export 'splash/splash.dart';
 export 'login/login.dart';
-export 'child_list/child_list.dart';
+export 'dose_list/dose_list.dart';
 export 'dashboard/dashboard.dart';
 export 'home/home.dart';
 export 'bus_list/bus_list.dart';

@@ -118,6 +118,9 @@ class $AssetsSvgsGen {
   SvgGenImage get icSettings =>
       const SvgGenImage('assets/svgs/ic_settings.svg');
 
+  /// File path: assets/svgs/ic_pdd.svg
+  String get icPdd => 'assets/svgs/ic_pdd.svg';
+
   /// List of all assets
   List<SvgGenImage> get values => [
         icAlert,
