@@ -1,3 +1,6 @@
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+import '../../../service/notification/notification_service.dart';
 import '../../../utils/exports.dart';
 import '../../settings/models/requests/settings_model.dart';
 
@@ -26,7 +29,7 @@ class MessagesPage extends BaseGetView<MessagesController> {
 }
 
 class MessageWidget extends StatefulWidget {
-  MessageWidget({Key? key, required this.model}) : super(key: key);
+  const MessageWidget({Key? key, required this.model}) : super(key: key);
   final SettingsModel model;
 
   @override
@@ -35,8 +38,23 @@ class MessageWidget extends StatefulWidget {
 
 class _MessageWidgetState extends State<MessageWidget> {
   // late final SettingsModel model;
-  TimeOfDay _time = TimeOfDay(hour: 7, minute: 15);
+  TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
   late final SettingsModel model;
+  late final NotificationService notificationService;
+
+  @override
+  void initState() {
+    model = widget.model;
+    notificationService = NotificationService();
+    listenToNotificationStream();
+    notificationService.initializePlatformNotifications();
+    super.initState();
+  }
+
+  void listenToNotificationStream() =>
+      notificationService.behaviorSubject.listen((payload) {
+        print("notification received$payload");
+      });
 
   void _selectTime() async {
     final TimeOfDay? newTime = await showTimePicker(
@@ -53,10 +71,13 @@ class _MessageWidgetState extends State<MessageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    model = widget.model;
+
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
+      // crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const Spacer(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,37 +86,45 @@ class _MessageWidgetState extends State<MessageWidget> {
               alignment: Alignment.centerLeft,
               child: Image.asset(Assets.images.icWellness.path),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      // Text will be static as of now,
-                      // But in future we will remove and add
-                      // texts coming from apis.
-                      model.title ?? '--',
-                      style: AppStyles.textNormal.copyWith(
-                        fontSize: Dimens.fontSize16.sp,
-                        color: AppColors.bodyTextColor,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
                     // Text will be static as of now,
                     // But in future we will remove and add
                     // texts coming from apis.
-                  ],
-                ),
+                    model.title ?? '--',
+                    style: AppStyles.textNormal.copyWith(
+                      fontSize: Dimens.fontSize16.sp,
+                      color: AppColors.bodyTextColor,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+
+                  // Text will be static as of now,
+                  // But in future we will remove and add
+                  // texts coming from apis.
+                ],
               ),
             ),
-            Align(
-              alignment: Alignment.centerLeft,
+
+          ],
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Align(
+              alignment: Alignment.topLeft,
               child: Text(
                 maxLines: 2,
+                textDirection: TextDirection.ltr,
+                textAlign: TextAlign.justify,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
                 // Text will be static as of now,
                 // But in future we will remove and add
                 // texts coming from apis.
@@ -107,29 +136,17 @@ class _MessageWidgetState extends State<MessageWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                // Text will be static as of now,
-                // But in future we will remove and add
-                // texts coming from apis.
-                model.subTitle ?? '--',
-                style: AppStyles.textSemiBold.copyWith(
-                  fontSize: Dimens.fontSize20.sp,
-                  color: AppColors.bodyTextColor.shade500,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
         ElevatedButton(
           onPressed: _selectTime,
-          child: Text('SELECT TIME'),
+          child: const Text('Select Time'),
         ),
-        SizedBox(height: 8),
-        Text(
-          'Selected time: ${_time.format(context)}',
+        const SizedBox(height: 8),
+        Center(
+          child: Text(
+            'Selected time: ${_time.format(context)}',
+          ),
         ),
         ElevatedButton(
           style: TextButton.styleFrom(
@@ -138,7 +155,19 @@ class _MessageWidgetState extends State<MessageWidget> {
             padding: const EdgeInsets.all(10.0),
             textStyle: const TextStyle(fontSize: 14),
           ),
-          onPressed: () async {},
+          onPressed: () async {
+            await notificationService.showPeriodicLocalNotification(
+                id: 1,
+                title: model.title??"Drink Water Periodic ",
+                body: model.subTitle??"Time to drink some water!",
+                payload: "You just took water! Huurray!",repeatInterval: RepeatInterval.hourly);
+            await notificationService.showGroupedNotifications(title: 'Drink Water');
+       /*     await notificationService.showScheduledLocalNotification(
+                id: 0,
+                title: "Drink Water",
+                body: "Time to drink some water!",
+                payload: "You just took water! Huurray!", seconds: 10);*/
+          },
           child: const Text('Save'),
         )
       ],

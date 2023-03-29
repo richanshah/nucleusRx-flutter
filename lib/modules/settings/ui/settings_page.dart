@@ -17,7 +17,7 @@ class SettingsPage extends BaseGetView<SettingsController> {
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) {
-                return Divider();
+                return const Divider();
               },
               itemBuilder: (context, index) {
                 SettingsModel settingModel=controller.settingItem.value[index];
@@ -25,27 +25,9 @@ class SettingsPage extends BaseGetView<SettingsController> {
                 return SettingsListItem(
                   model: settingModel,
                   index: index,
-                  onNextTap: (index) {
-                    Get.dialog(
-                      CustomDialog(
-                        name: settingModel.title??'Demo',
-                        nickName: settingModel.subTitle??'Nicknames',
-                        description: AppString.areYouSureDeleteBusRoute.tr,
-                        onNoTap: () {
-                          Get.back();
-                        },
-                        onYesTap: () {
-                          Get.back();
-                        },
-                      ),
-                      navigatorKey: Get.nestedKey(null),
-                      barrierDismissible: false,
-                    );
-                  },
                   onTap: (index){
-
-                    // Get.toNamed(AppPaths.childBusDetails, id: 1,);
-                  }, isOn: true,
+                    Get.toNamed(AppPaths.messages, id: 1,arguments: settingModel);
+                  }, isOn: settingModel.isOn??true,
                 );
               },
               scrollDirection: Axis.vertical,

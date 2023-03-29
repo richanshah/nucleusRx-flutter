@@ -5,7 +5,7 @@ class CalendarRoutes {
 
   static final routes = [
     GetPage(
-      name: AppPaths.calendar,
+      name: AppPaths.medSummary,
       page: MedSummaryPage.new,
       preventDuplicates: true,
       binding: CalendarBindings(),

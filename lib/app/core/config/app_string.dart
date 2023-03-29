@@ -31,7 +31,7 @@ class AppString extends Translations {
           addChild: 'Add Child',
           addBusRoute: 'Add Bus Route',
           areYouSureDeleteChild: 'Are you sure you want to delete child?',
-          areYouSureDeleteBusRoute: 'Are you sure you want to delete route?',
+          areYouSureLogoutRoute: 'Are you sure you want to logout?',
           yesInUpperCase: 'YES',
           noInUpperCase: 'NO',
           resendVerificationLinkTitle: 'A verification link has been sent to your email account.',
@@ -108,7 +108,7 @@ class AppString extends Translations {
 
   static const String addChild = "keyAddChild";
   static const String addBusRoute = "keyAddBusRoute";
-  static const String areYouSureDeleteBusRoute = "keyAreYouSureDeleteBusRoute";
+  static const String areYouSureLogoutRoute = "keyAreYouSureDeleteBusRoute";
   static const String areYouSureDeleteChild = "keyAreYouSureDeleteChild";
   static const String yesInUpperCase = "keyYesInUpperCase";
   static const String noInUpperCase = "keyNoInUpperCase";

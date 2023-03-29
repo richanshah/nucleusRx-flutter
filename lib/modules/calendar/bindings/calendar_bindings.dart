@@ -3,6 +3,6 @@ import '../../../utils/exports.dart';
 class CalendarBindings extends Bindings {
   @override
   void dependencies() {
-    Get.put(CalendarController(), tag: (MedSummaryPage).toString());
+    Get.put(MedSummaryController(), tag: (MedSummaryPage).toString());
   }
 }

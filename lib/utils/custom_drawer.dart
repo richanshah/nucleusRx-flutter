@@ -55,9 +55,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
               size: 18.0,
               color: AppColors.primaryColor,
             ),
-            title: const Text(
-              "Settings",
-            ),
+            title: const Text("Settings",
+                style: TextStyle(
+                  color: AppColors.darkGrayColor,
+                )),
             children: <Widget>[
               ListTile(
                 leading: const Icon(Icons.timer_sharp),
@@ -90,10 +91,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     )),
                 onTap: () {
                   toggleDrawer();
-                  /*  Get.to(() => const ChangePasscodeScreen(),
+                    Get.to(() => const ChangePasscodePage(),
                     duration: const Duration(milliseconds: 400),
-                    transition: Transition.zoom;,
-                  );*/
+                    transition: Transition.zoom,
+                  );
                 },
               ),
               ListTile(
@@ -157,7 +158,22 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   color: AppColors.darkGrayColor,
                 )),
             onTap: () {
-              Get.defaultDialog(
+              Get.dialog(
+                CustomDialog(
+                  name: '',
+                  nickName: '?',
+                  description: AppString.areYouSureLogoutRoute.tr,
+                  onNoTap: () {
+                    Get.back();
+                  },
+                  onYesTap: () {
+                    SystemNavigator.pop();
+                  },
+                ),
+                navigatorKey: Get.nestedKey(null),
+                barrierDismissible: false,
+              );
+ /*             Get.defaultDialog(
                   buttonColor: AppColors.primaryColor,
                   title: "",
                   middleText: "Are you sure you want to logout?",
@@ -167,7 +183,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   onConfirm: () {
                     SystemNavigator.pop();
                   },
-                  textCancel: "CANCEL");
+                  textCancel: "CANCEL");*/
             },
           ),
         ],

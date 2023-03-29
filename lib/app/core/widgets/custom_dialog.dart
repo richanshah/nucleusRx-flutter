@@ -42,8 +42,8 @@ class CustomDialog extends StatelessWidget {
       shape: const ContinuousRectangleBorder(),
       backgroundColor: AppColors.surface,
       insetPadding: EdgeInsets.symmetric(
-        vertical: Dimens.padding10.h,
-        horizontal: Dimens.padding15.w,
+        vertical: Dimens.padding5.h,
+        horizontal: Dimens.padding10.w,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -53,9 +53,9 @@ class CustomDialog extends StatelessWidget {
           Flexible(
             child: Padding(
               padding: EdgeInsets.only(
-                top: Dimens.padding15.w,
-                left: Dimens.padding30.w,
-                right: Dimens.padding30.w,
+                top: Dimens.padding10.w,
+                left: Dimens.padding20.w,
+                right: Dimens.padding20.w,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -110,7 +110,7 @@ class CustomDialog extends StatelessWidget {
                   style: Get.theme.textButtonTheme.style?.copyWith(
                     backgroundColor: MaterialStateProperty.resolveWith<Color>(
                       (states) => states.contains(MaterialState.pressed)
-                          ? AppColors.itemDifferenceColor
+                          ? AppColors.darkGrayColor
                           : AppColors.background,
                     ),
                     shape: MaterialStatePropertyAll(
@@ -122,7 +122,7 @@ class CustomDialog extends StatelessWidget {
                     ),
                     padding: MaterialStatePropertyAll(
                       EdgeInsets.symmetric(
-                        vertical: Dimens.padding18.h,
+                        vertical: Dimens.padding10.h,
                         horizontal: Dimens.padding10.w,
                       ),
                     ),
@@ -143,7 +143,7 @@ class CustomDialog extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.resolveWith<Color>(
                       (states) => states.contains(MaterialState.pressed)
                           ? AppColors.itemDifferenceColor
-                          : AppColors.background,
+                          : AppColors.darkGrayColor,
                     ),
                     shape: MaterialStatePropertyAll(
                       ContinuousRectangleBorder(
@@ -154,7 +154,7 @@ class CustomDialog extends StatelessWidget {
                     ),
                     padding: MaterialStatePropertyAll(
                       EdgeInsets.symmetric(
-                        vertical: Dimens.padding18.h,
+                        vertical: Dimens.padding10.h,
                         horizontal: Dimens.padding10.w,
                       ),
                     ),

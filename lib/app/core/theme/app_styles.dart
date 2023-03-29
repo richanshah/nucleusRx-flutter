@@ -197,7 +197,7 @@ abstract class AppStyles {
           labelMedium: labelMedium,
           labelSmall: labelSmall,
         ).apply(
-          bodyColor: AppColors.onPrimary,
-          displayColor: AppColors.onPrimary,
+          bodyColor: AppColors.labelGrimGreyColor,
+          displayColor: AppColors.labelGrimGreyColor,
         );
 }

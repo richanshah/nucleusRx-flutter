@@ -272,10 +272,34 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_local_notifications",
+      "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/flutter_local_notifications-9.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_local_notifications_linux",
+      "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/flutter_local_notifications_linux-0.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_local_notifications_platform_interface",
+      "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/flutter_local_notifications_platform_interface-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_localizations",
       "rootUri": "file:///home/richa_shah/flutter_linux_3.7.5-stable/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_native_timezone",
+      "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/flutter_native_timezone-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_screenutil",
@@ -776,6 +800,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "timezone",
+      "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/timezone-0.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "timing",
       "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/timing-1.0.1",
       "packageUri": "lib/",
@@ -843,9 +873,9 @@
     },
     {
       "name": "xdg_directories",
-      "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/xdg_directories-1.0.0",
+      "rootUri": "file:///home/richa_shah/.pub-cache/hosted/pub.dev/xdg_directories-0.2.0+3",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.12"
     },
     {
       "name": "xml",
@@ -866,7 +896,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-03-28T08:23:36.726477Z",
+  "generated": "2023-03-29T07:18:38.389861Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }

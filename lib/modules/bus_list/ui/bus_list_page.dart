@@ -18,7 +18,7 @@ class BusListPage extends BaseGetView<BusListController> {
                     CustomDialog(
                       name: 'Dose Item Abc',
                       nickName: 'Nicknames',
-                      description: AppString.areYouSureDeleteBusRoute.tr,
+                      description: AppString.areYouSureLogoutRoute.tr,
                       onNoTap: () {
                         Get.back();
                       },

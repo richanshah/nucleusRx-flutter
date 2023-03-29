@@ -1,6 +1,6 @@
 import '../../../../utils/exports.dart';
 
-class CalendarView extends BaseGetView<CalendarController> {
+class CalendarView extends BaseGetView<MedSummaryController> {
   const CalendarView({Key? key}) : super(key: key);
 
   @override

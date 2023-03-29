@@ -1,3 +1,5 @@
+import 'package:ssc_parent/service/navigation/routes/change_passcode_routes.dart';
+
 import '../../../utils/exports.dart';
 
 class DashboardController extends BaseGetxController {
@@ -97,7 +99,7 @@ class DashboardController extends BaseGetxController {
         }
       case 1:
         {
-          path = AppPaths.calendar;
+          path = AppPaths.medSummary;
           break;
         }
       case 2:
@@ -153,7 +155,7 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 0;
           break;
         }
-      case AppPaths.calendar:
+      case AppPaths.medSummary:
         {
           currentIndex.value = 1;
           break;
@@ -171,6 +173,16 @@ class DashboardController extends BaseGetxController {
       case AppPaths.settings:
         {
           currentIndex.value = 4;
+          break;
+        }
+      case AppPaths.childBusDetails:
+        {
+          currentIndex.value = 5;
+          break;
+        }
+      case AppPaths.changePasscode:
+        {
+          currentIndex.value = 6;
           break;
         }
     }
@@ -200,7 +212,7 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 0;
           return HomeRoutes.routes.first.createRoute(context);
         }
-      case AppPaths.calendar:
+      case AppPaths.medSummary:
         {
           currentIndex.value = 1;
           return CalendarRoutes.routes.first.createRoute(context);
@@ -222,8 +234,13 @@ class DashboardController extends BaseGetxController {
         }
       case AppPaths.childBusDetails:
         {
-          currentIndex.value = 0;
+          currentIndex.value = 5;
           return ChildBusDetailsRoutes.routes.first.createRoute(context);
+        }
+      case AppPaths.changePasscode:
+        {
+          currentIndex.value = 6;
+          return ChangePasscodeRoutes.routes.first.createRoute(context);
         }
     }
     return null;

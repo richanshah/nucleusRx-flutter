@@ -41,7 +41,7 @@ class DoseListPage extends BaseGetView<DoseListController> {
                       CustomDialog(
                         name: 'JPBUS14',
                         nickName: 'Nicknames',
-                        description: AppString.areYouSureDeleteBusRoute.tr,
+                        description: AppString.areYouSureLogoutRoute.tr,
                         onNoTap: () {
                           Get.back();
                         },

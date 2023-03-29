@@ -6,7 +6,6 @@ abstract class AppPaths {
   static const newUser = '/newUser';
   static const user = '/user';
   static const wellness = '/wellness';
-  static const medSummary = '/medSummary';
   static const profile = '/profile';
   static const doseTimePreference = '/doseTimePreference';
   static const changePasscode = '/changePasscode';
@@ -14,7 +13,7 @@ abstract class AppPaths {
 
   static const dashboard = "/dashboard";
   static const home = "/dashboard/home";
-  static const calendar = "/dashboard/calendar";
+  static const medSummary = "/dashboard/medSummary";
   static const alerts = "/dashboard/alerts";
   static const messages = "/dashboard/messages";
   static const settings = "/dashboard/settings";
