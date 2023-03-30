@@ -1074,6 +1074,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  swipeable_card_stack:
+    dependency: "direct main"
+    description:
+      name: swipeable_card_stack
+      sha256: "4b21357d042094b460554d2660fcd1486554ddba6389854055b1188c8fa85168"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.5"
   synchronized:
     dependency: transitive
     description:

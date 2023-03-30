@@ -2,24 +2,31 @@
 import 'package:flutter_demo_richa/utils/custom_drawer.dart';
 
 import '../../../utils/exports.dart';
+import '../../home/ui/widgets/wellness_card.dart';
 
 class WellnessPage extends BaseGetView<AlertsController> {
-  const WellnessPage({Key? key}) : super(key: key);
+   WellnessPage({Key? key}) : super(key: key);
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
+  toggleDrawer() async {
+    if (scaffoldKey.currentState?.isDrawerOpen == true) {
+      scaffoldKey.currentState?.closeDrawer();
+    } else {
+      scaffoldKey.currentState?.openDrawer();
+    }
+  }
   @override
   Widget buildView(BuildContext context) {
+
     return Scaffold(
       drawer:  CustomDrawer(),
       body: Column(
+        mainAxisSize: MainAxisSize.max,
         children: [
-          // CustomAppBar(
-          //   title: AppString.wellness.tr,
-          //   onBackPressed: controller.onBackPressed,
-          // ),
           AppBar(
               leading: IconButton(
                 onPressed: () {
-                  // toggleDrawer();
+                  toggleDrawer();
                 },
                 icon: Image.asset(Assets.images.icLogo.path),
               ),
@@ -35,12 +42,21 @@ class WellnessPage extends BaseGetView<AlertsController> {
                 )
               ],
               backgroundColor: AppColors.primaryColor),
-          const Placeholder(),
-
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              WellnessCard(
+                  title: 'Wellness screening',
+                  subTitle: 'Take all your medications on time even if you feel good',
+                  onTap: () { }),
+            ],
+          ),
         ],
       ),
     );
   }
+
 
   @override
   String? getTag() => (WellnessPage).toString();

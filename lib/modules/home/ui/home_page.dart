@@ -1,52 +1,26 @@
-import 'package:flutter_demo_richa/modules/dashboard/ui/widgets/custom_card.dart';
+import 'package:swipeable_card_stack/swipeable_card_stack.dart';
 
 import '../../../utils/exports.dart';
-import '../../dashboard/ui/widgets/dose_card.dart';
-import '../../dashboard/ui/widgets/home_card.dart';
 
 class HomePage extends BaseGetView<HomeController> {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+  int counter = 4;
 
-/*  @override
-  Widget buildView(BuildContext context) {
-    return Column(
-      children: [
-        CustomTabBar(
-          height: Dimens.tabHeight.h,
-          tabs: controller.tabs(),
-          onTap: controller.onTabTap,
-          tabController: controller.tabController,
-        ),
-        Expanded(
-          // Check that how we can move this tab view as navigation component
-          // do it in last as as per the tabs behaviour is should not be like
-          // Navigation
-
-          // Or Move it in another separate view
-          child: TabBarView(
-            controller: controller.tabController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: const [
-              // Create another one module for BusRoute listing
-              ChildListPage(),
-              BusListPage(),
-            ],
-          ),
-        ),
-      ],
-    );
-  }*/
   @override
   Widget buildView(BuildContext context) {
+    //create a CardController
+    SwipeableCardSectionController _cardController =
+        SwipeableCardSectionController();
     return Scaffold(
-      drawer:  CustomDrawer(),
+      drawer: CustomDrawer(),
       body: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-        /*  MainAppBar(
+          /*  MainAppBar(
             title: AppString.home.tr,
           ),*/
-        AppBar(
+          AppBar(
               leading: IconButton(
                 onPressed: () {
                   // toggleDrawer();
@@ -66,46 +40,85 @@ class HomePage extends BaseGetView<HomeController> {
               ],
               backgroundColor: AppColors.primaryColor),
           Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                HomeCard(
-                    title: 'Wellness screening',
-                    subTitle: 'Take all your medications on time even if you feel good',
-                    onTap: () {}),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SwipeableCardsSection(
+                    context: context,
+                    cardController: _cardController,
+                    items: [
+                      CustomCard(
+                          title: 'Load medications',
+                          subTitle: 'Please complete medication setup',
+                          onTap: () {
+                            _cardController.triggerSwipeUp();
+                          }),
+                      CustomCard(
+                          title: 'Load medications',
+                          subTitle: 'Please complete medication setup',
+                          onTap: () {
+                            _cardController.triggerSwipeUp();
+                          }),
+                      CustomCard(
+                          title: 'Load medications',
+                          subTitle: 'Please complete medication setup',
+                          onTap: () {
+                            _cardController.triggerSwipeUp();
+                          }),
+                      CustomCard(
+                          title: 'Load medications',
+                          subTitle: 'Please complete medication setup',
+                          onTap: () {
+                            _cardController.triggerSwipeUp();
+                          }),
+                      CustomCard(
+                          title: 'Load medications',
+                          subTitle: 'Please complete medication setup',
+                          onTap: () {
+                            _cardController.triggerSwipeUp();
+                          }),
+                    ],
+                    onCardSwiped: (dir, index, widget) {
+                      //Add the next card
+                  /*    if (counter <= 20) {
+                        _cardController.addItem(CustomCard(
+                            title: 'Load medications',
+                            subTitle: 'Please complete medication setup',
+                            onTap: () {
+                              _cardController.triggerSwipeUp();
+                            }));
+                        counter++;
+                      }*/
 
-                // Stack(
-                //   alignment: Alignment.topLeft,
-                //   children: [
-                //
-                //     CustomCard(
-                //         title: 'Load medications',
-                //         subTitle: 'Please complete medication setup',
-                //         onTap: () {}),
-                //     CustomCard(
-                //         title: 'Load medications',
-                //         subTitle: 'Please complete medication setup',
-                //         onTap: () {}),
-                //     CustomCard(
-                //         title: 'Load medications',
-                //         subTitle: 'Please complete medication setup',
-                //         onTap: () {}),
-                //     CustomCard(
-                //         title: 'Load medications',
-                //         subTitle: 'Please complete medication setup',
-                //         onTap: () {}),
-                //     CustomCard(
-                //         title: 'Load medications',
-                //         subTitle: 'Please complete medication setup',
-                //         onTap: () {}),
-                //   ],
-                // ),
-
-                DoseCard(
-                    title: 'Wellness screening',
-                    subTitle: 'Take all your medications on time even if you feel good',
-                    onTap: () {}),
-              ],
+                      if (dir == Direction.left) {
+                        print(
+                            'onDisliked ${(widget as CustomCard).title} $index');
+                      } else if (dir == Direction.right) {
+                        print('onLiked ${(widget as CustomCard).title} $index');
+                      } else if (dir == Direction.up) {
+                        print('onUp ${(widget as CustomCard).title} $index');
+                      } else if (dir == Direction.down) {
+                        print('onDown ${(widget as CustomCard).title} $index');
+                      }
+                    },
+                    enableSwipeUp: true,
+                    enableSwipeDown: false,
+                  ),
+                  WellnessCard(
+                      title: 'Wellness screening',
+                      subTitle:
+                          'Take all your medications on time even if you feel good',
+                      onTap: () {}),
+                  DoseCard(
+                      title: 'Wellness screening',
+                      subTitle:
+                          'Take all your medications on time even if you feel good',
+                      onTap: () {}),
+                ],
+              ),
             ),
           ),
         ],

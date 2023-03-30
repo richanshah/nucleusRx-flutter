@@ -11,7 +11,7 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
+      elevation: 20,
       shadowColor: Colors.black12,
       color: AppColors.white,
       child: SizedBox(
@@ -32,7 +32,7 @@ class CustomCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ), //Textstyle
                   ),
-                  GestureDetector(onTap:() => onTap,child: Icon(Icons.close))
+                  GestureDetector(onTap:() => onTap,child: Icon(Icons.close,color: AppColors.labelGrimGreyColor,))
                 ],
               ), //Text
               const SizedBox(

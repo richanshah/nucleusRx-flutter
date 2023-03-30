@@ -16,13 +16,13 @@ class DoseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300,
+      width: double.infinity,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
         ),
         color: AppColors.white,
-        elevation: 10,
+        elevation: 6,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Row(
