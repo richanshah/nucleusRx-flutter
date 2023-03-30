@@ -1,0 +1,1 @@
+export 'device_details_bindings.dart';

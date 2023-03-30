@@ -5,18 +5,18 @@ abstract class AppPaths {
   static const otp = '/otp';
   static const newUser = '/newUser';
   static const user = '/user';
-  static const wellness = '/wellness';
   static const profile = '/profile';
   static const doseTimePreference = '/doseTimePreference';
+  static const deviceDetails = '/deviceDetails';
   static const changePasscode = '/changePasscode';
+  static const settings = '/settings';
+  static const messages = '/messages';
   static const demo = '/demo';
 
   static const dashboard = "/dashboard";
   static const home = "/dashboard/home";
   static const medSummary = "/dashboard/medSummary";
-  static const alerts = "/dashboard/alerts";
-  static const messages = "/dashboard/messages";
-  static const settings = "/dashboard/settings";
+  static const wellness = '/dashboard/wellness';
 
   static const childBusDetails = "/dashboard/child_bus_details";
 

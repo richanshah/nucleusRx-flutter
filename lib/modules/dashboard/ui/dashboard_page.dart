@@ -13,10 +13,14 @@ class DashboardPage extends BaseGetView<DashboardController> {
           initialRoute: AppPaths.home,
           // Needed to update Get.currentRoute and Get.previousRoute as per
           // this nested navigator.
-          observers: [GetObserver((p0) {},Get.routing),],
+          observers: [
+            GetObserver((p0) {}, Get.routing),
+          ],
           onGenerateRoute: (settings) {
             return controller.onGenerateRoute(settings, context);
           },
+          onUnknownRoute: (settings) =>
+              MaterialPageRoute(builder: (context) => HomePage()),
           key: Get.nestedKey(1),
         ),
         bottomNavigationBar: const DashboardBottomNavigationBar(),

@@ -1,23 +1,31 @@
 import 'exports.dart';
 
 class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({Key? key}) : super(key: key);
+
+  // CustomDrawer({Key? key,required this.scaffoldKey}) : super(key: key);
+  CustomDrawer({Key? key}) : super(key: key);
 
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
 }
 
 class _CustomDrawerState extends State<CustomDrawer> {
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   int _selectedDrawerIndex = 0;
   int _selectedIndex = 0;
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-
+  toggleDrawer() async {
+    if (scaffoldKey.currentState?.isDrawerOpen == true) {
+      scaffoldKey.currentState?.closeDrawer();
+    } else {
+      scaffoldKey.currentState?.openDrawer();
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -43,7 +51,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 )),
             onTap: () {
               toggleDrawer();
-              // Get.to(const ProfileScreen());
+              Get.to(const UserDetailsPage());
             },
           ),
           ExpansionTile(
@@ -109,10 +117,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     )),
                 onTap: () {
                   toggleDrawer();
-                  /*   Get.to(() => const DoseTimePreferenceScreen(),
+                     Get.to(() => const SettingsPage(),
                     duration: const Duration(milliseconds: 400), //
                     transition: Transition.zoom,
-                  );*/
+                  );
                 },
               ),
             ],
@@ -144,7 +152,11 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 )),
             onTap: () {
               toggleDrawer();
-              // Get.to(const ProfileScreen());
+              // Get.toNamed(AppPaths.deviceDetails);
+              Get.to(() => const DeviceDetailsPage(),
+                duration: const Duration(milliseconds: 400),
+                transition: Transition.upToDown,
+              );
             },
           ),
           ListTile(
@@ -191,13 +203,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
     );
   }
 
-  toggleDrawer() async {
-    if (_scaffoldKey.currentState?.isDrawerOpen == true) {
-      _scaffoldKey.currentState?.openEndDrawer();
-    } else {
-      _scaffoldKey.currentState?.openDrawer();
-    }
-  }
 
   // set selected menu
   void _onSelectItem(int index) {

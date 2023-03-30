@@ -22,3 +22,4 @@ export '../service/service.dart';
 export '../utils/utils.dart';
 export '../utils/main_app_bar.dart';
 export '../utils/custom_drawer.dart';
+export '../utils/user_preferences.dart';

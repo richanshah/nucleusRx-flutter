@@ -5,7 +5,7 @@ class AlertsRoutes {
 
   static final routes = [
     GetPage(
-      name: AppPaths.alerts,
+      name: AppPaths.wellness,
       page: WellnessPage.new,
       preventDuplicates: true,
       binding: AlertsBindings(),

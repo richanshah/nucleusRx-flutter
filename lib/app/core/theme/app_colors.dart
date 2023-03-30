@@ -48,6 +48,9 @@ abstract class AppColors {
   static final onSurface = createMaterialColor(Colors.black);
 
   static final outline = createMaterialColor(const Color(0xFFB5B5B5));
+  static const Color outlineGreyColor = Color(0xFFD3D5D8);
+  static const Color outlineBgColor = Color(0xffF6F6F6);
+
   static final appBarShadow = createMaterialColor(const Color(0xFF9E9E9E));
   static final shadow = createMaterialColor(const Color(0xFF000000)); //59000000
   static final lightShadow = createMaterialColor(const Color(0x29000000));
@@ -100,4 +103,11 @@ abstract class AppColors {
   static final MaterialColor tileBackgroundColor = createMaterialColor(const Color(0xFFF9F9F9));
   static final MaterialColor darkTileBackgroundColor = createMaterialColor(const Color(0xFF575757));
   static final MaterialColor labelGrimGreyColor = createMaterialColor(const Color(0xFF777777));
+  static final MaterialColor normalTextColorBlack = createMaterialColor(const Color(0x29000000));
+  static final MaterialColor normalTextColorWhite = createMaterialColor(const Color(0x29000000));
+  static final MaterialColor labelTextColorBlack = createMaterialColor(const Color(0x29000000));
+  static final MaterialColor profileTextColor = createMaterialColor(const Color(0x601D1D1C));
+  static final MaterialColor lowOpacityTextColor = createMaterialColor(const Color(0x401D1D1C));
+
+
 }

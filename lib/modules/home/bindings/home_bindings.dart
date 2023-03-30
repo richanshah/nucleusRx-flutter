@@ -1,3 +1,4 @@
+
 import '../../../utils/exports.dart';
 class HomeBindings extends Bindings {
   @override
@@ -8,5 +9,7 @@ class HomeBindings extends Bindings {
     Get.put(ChangePasscodeController(), tag: (ChangePasscodePage).toString());
     Get.put(DashboardController(), tag: (DashboardPage).toString());
     Get.put(MedSummaryController(), tag: (MedSummaryPage).toString());
+    Get.put(DeviceDetailsController(), tag: (DeviceDetailsPage).toString());
+    Get.put(UserDetailsController(), tag: (UserDetailsPage).toString());
   }
 }

@@ -54,7 +54,7 @@ class DashboardController extends BaseGetxController {
             ),
           ),
         ),
-        BottomNavigationBarItem(
+     /*   BottomNavigationBarItem(
           icon: Assets.svgs.icMessages.svg(
             height: 20.7.h,
           ),
@@ -79,7 +79,7 @@ class DashboardController extends BaseGetxController {
               BlendMode.srcATop,
             ),
           ),
-        ),
+        ),*/
       ];
   var currentIndex = 0.obs;
 
@@ -104,7 +104,7 @@ class DashboardController extends BaseGetxController {
         }
       case 2:
         {
-          path = AppPaths.alerts;
+          path = AppPaths.wellness;
           break;
         }
       case 3:
@@ -160,7 +160,7 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 1;
           break;
         }
-      case AppPaths.alerts:
+      case AppPaths.wellness:
         {
           currentIndex.value = 2;
           break;
@@ -217,7 +217,7 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 1;
           return CalendarRoutes.routes.first.createRoute(context);
         }
-      case AppPaths.alerts:
+      case AppPaths.wellness:
         {
           currentIndex.value = 2;
           return AlertsRoutes.routes.first.createRoute(context);
@@ -227,7 +227,7 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 3;
           return MessagesRoutes.routes.first.createRoute(context);
         }
-      case AppPaths.settings:
+     /* case AppPaths.settings:
         {
           currentIndex.value = 4;
           return SettingsRoutes.routes.first.createRoute(context);
@@ -241,7 +241,7 @@ class DashboardController extends BaseGetxController {
         {
           currentIndex.value = 6;
           return ChangePasscodeRoutes.routes.first.createRoute(context);
-        }
+        }*/
     }
     return null;
   }

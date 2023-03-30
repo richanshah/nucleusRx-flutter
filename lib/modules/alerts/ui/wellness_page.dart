@@ -9,7 +9,7 @@ class WellnessPage extends BaseGetView<AlertsController> {
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
-      drawer: const CustomDrawer(),
+      drawer:  CustomDrawer(),
       body: Column(
         children: [
           // CustomAppBar(

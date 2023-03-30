@@ -40,6 +40,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_banana.png
   AssetGenImage get imgKeyIcon =>
       const AssetGenImage('assets/images/ic_keyicon.png');
+ /// File path: assets/images/device_details_bg.png
+  AssetGenImage get deviceDetailsBg =>
+      const AssetGenImage('assets/images/device_details_bg.png');
 
   /// File path: assets/images/ic_logo.png
   AssetGenImage get icLogo => const AssetGenImage('assets/images/ic_logo.png');
@@ -73,7 +76,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [detailsProfileImage, detailsScreenBg, profileImage,icNext,icShare,icSplash,imgKeyIcon,icLogo,icWellness];
+      [detailsProfileImage, detailsScreenBg, profileImage,icNext,icShare,icSplash,imgKeyIcon,icLogo,icWellness,deviceDetailsBg];
 }
 
 class $AssetsSvgsGen {

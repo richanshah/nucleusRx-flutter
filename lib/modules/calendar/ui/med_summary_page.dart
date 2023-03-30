@@ -6,7 +6,7 @@ class MedSummaryPage extends BaseGetView<MedSummaryController> {
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
-      drawer: const CustomDrawer(),
+      drawer:  CustomDrawer(),
       body: Column(
         children: [
           AppBar(
@@ -28,40 +28,44 @@ class MedSummaryPage extends BaseGetView<MedSummaryController> {
                 )
               ],
               backgroundColor: AppColors.primaryColor),
-          ListView.builder(
-              itemCount: 5,
-              padding: const EdgeInsets.all(8),
-              itemBuilder: (BuildContext context, int index) {
-                return Column(
-                  children: [
-                    ListTile(
-                      trailing: SvgPicture.asset(
-                        // Assets.images.icShare.path,
-                        Assets.svgs.icPdd,
-                        height: 30,
-                        fit: BoxFit.contain,
-                      ),
-                      title: const Text('budesonide',
-                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
+          Flexible(
+            child: ListView.separated(
+                separatorBuilder: (context, index) {
+                  return const Divider();
+                },
+                itemCount: 5,
+                padding: const EdgeInsets.all(8),
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      ListTile(
+                        trailing: SvgPicture.asset(
+                          // Assets.images.icShare.path,
+                          Assets.svgs.icPdd,
+                          height: 30,
+                          fit: BoxFit.contain,
+                        ),
+                        title: const Text('budesonide',
+                            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
 
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text("40 mg ",
-                              style: TextStyle(fontWeight: FontWeight.w100,fontSize: 16)),
-                          Text("Once a day",
-                              style: TextStyle(fontWeight: FontWeight.normal,fontSize: 16))
-                        ],
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text("40 mg ",
+                                style: TextStyle(fontWeight: FontWeight.w100,fontSize: 16)),
+                            Text("Once a day",
+                                style: TextStyle(fontWeight: FontWeight.normal,fontSize: 16))
+                          ],
+                        ),
+                        visualDensity: VisualDensity.comfortable,
+                        contentPadding: const EdgeInsets.all(6),
+                        dense: true,
+                        isThreeLine: true,
                       ),
-                      visualDensity: VisualDensity.comfortable,
-                      contentPadding: const EdgeInsets.all(6),
-                      dense: true,
-                      isThreeLine: true,
-                    ),
-                    const Divider(),
-                  ],
-                );
-              }),
+                    ],
+                  );
+                }),
+          ),
         ],
       ),
     );
