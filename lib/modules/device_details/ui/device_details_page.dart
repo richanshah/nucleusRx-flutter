@@ -1,7 +1,7 @@
 
 
-import 'package:ssc_parent/modules/device_details/ui/widgets/device_widget.dart';
-import 'package:ssc_parent/utils/device_preferences.dart';
+import 'package:flutter_demo_richa/modules/device_details/ui/widgets/device_widget.dart';
+import 'package:flutter_demo_richa/utils/device_preferences.dart';
 
 import '../../../utils/exports.dart';
 

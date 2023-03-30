@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:ssc_parent/gen/assets.gen.dart';
+import 'package:flutter_demo_richa/gen/assets.gen.dart';
 
 import '../../../../app/core/theme/app_colors.dart';
 

@@ -1,4 +1,4 @@
-import 'package:ssc_parent/gen/fonts.gen.dart';
+import 'package:flutter_demo_richa/gen/fonts.gen.dart';
 
 import '../../../utils/exports.dart';
 

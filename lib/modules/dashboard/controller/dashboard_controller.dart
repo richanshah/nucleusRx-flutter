@@ -1,4 +1,4 @@
-import 'package:ssc_parent/service/navigation/routes/change_passcode_routes.dart';
+import 'package:flutter_demo_richa/service/navigation/routes/change_passcode_routes.dart';
 
 import '../../../utils/exports.dart';
 

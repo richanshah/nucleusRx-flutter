@@ -1,4 +1,4 @@
-import 'package:ssc_parent/modules/dashboard/ui/widgets/custom_card.dart';
+import 'package:flutter_demo_richa/modules/dashboard/ui/widgets/custom_card.dart';
 
 import '../../../utils/exports.dart';
 import '../../dashboard/ui/widgets/dose_card.dart';

@@ -1,4 +1,4 @@
-import 'package:ssc_parent/modules/change_passcode/change_passcode.dart';
+import 'package:flutter_demo_richa/modules/change_passcode/change_passcode.dart';
 
 import '../../../utils/exports.dart';
 

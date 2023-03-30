@@ -1,5 +1,5 @@
-import 'package:ssc_parent/modules/otp/otp_binding.dart';
-import 'package:ssc_parent/modules/otp/otp_page.dart';
+import 'package:flutter_demo_richa/modules/otp/otp_page.dart';
+import 'package:flutter_demo_richa/modules/otp/otp_binding.dart';
 
 import '../../../../utils/exports.dart';
 

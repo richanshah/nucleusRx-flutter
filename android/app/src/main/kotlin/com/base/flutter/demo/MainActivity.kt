@@ -1,4 +1,4 @@
-package com.bv.sscparent.ssc_parent
+package com.base.flutter.demo
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,5 @@
 
-import 'package:ssc_parent/utils/custom_drawer.dart';
+import 'package:flutter_demo_richa/utils/custom_drawer.dart';
 
 import '../../../utils/exports.dart';
 

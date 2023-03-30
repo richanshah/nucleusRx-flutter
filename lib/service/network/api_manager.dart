@@ -1,3 +1,4 @@
+import '../../modules/login/models/requests/otprequest.dart';
 import '../../utils/exports.dart';
 
 /// define all of your api calls here
@@ -14,25 +15,24 @@ class ApiManager extends GetxService {
 
   final ApiClient _apiClient = Get.find(tag: (ApiClient).toString());
 
-  // Future<BaseResponse<LoginResponse>> login(
-  //     String userName, String password) async {
-  //   final response = await _apiClient.post(
-  //     Apis.signIn,
-  //     data: {
-  //       'email': 'nimit.bagadiya@brainvire.com',
-  //       'password': 'Brain@2021'
-  //     },
-  //   );
-  //
-  //   /// Note : Need to be changed as we have to check first that
-  //   /// its success or failure instance
-  //   if (response.response != null) {
-  //    return BaseResponse<LoginResponse>.fromJson(
-  //         response.response?.data, (json) => LoginResponse.fromJson(json));
-  //   } else {
-  //     return _baseResponseUsingError(response.error);
-  //   }
-  // }
+  Future<BaseResponse<SendOtpToUser>> login(
+     String phoneNumber) async {
+    final response = await _apiClient.post(
+      Apis.request_otp,
+      data: {
+        'phone_number': phoneNumber,
+      },
+    );
+
+    /// Note : Need to be changed as we have to check first that
+    /// its success or failure instance
+    if (response.response != null) {
+     return BaseResponse<SendOtpToUser>.fromJson(
+          response.response?.data, (json) => SendOtpToUser.fromJson(json));
+    } else {
+      return _baseResponseUsingError(response.error);
+    }
+  }
 
   BaseResponse<T> _baseResponseUsingError<T>(ErrorResult? response) {
     return BaseResponse<T>(

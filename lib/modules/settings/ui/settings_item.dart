@@ -1,4 +1,4 @@
-import 'package:ssc_parent/modules/settings/models/requests/settings_model.dart';
+import 'package:flutter_demo_richa/modules/settings/models/requests/settings_model.dart';
 
 import '../../../../utils/exports.dart';
 
