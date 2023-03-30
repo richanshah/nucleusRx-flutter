@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/home/richa_shah/Richa/GitWorkSpace/projects/ssc_parent_git/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/richa_shah/Richa/GitWorkSpace/projects/flutter_demo/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

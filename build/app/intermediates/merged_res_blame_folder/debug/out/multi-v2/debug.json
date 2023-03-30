@@ -160,7 +160,7 @@
                     }
                 },
                 {
-                    "source": "/home/richa_shah/Richa/GitWorkSpace/projects/ssc_parent_git/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/richa_shah/Richa/GitWorkSpace/projects/flutter_demo/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -691,7 +691,7 @@
             "outputFile": "com.base.flutter.demo.app-merged_res-19:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "/home/richa_shah/Richa/GitWorkSpace/projects/ssc_parent_git/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/richa_shah/Richa/GitWorkSpace/projects/flutter_demo/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
