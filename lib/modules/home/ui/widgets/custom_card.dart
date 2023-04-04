@@ -27,7 +27,7 @@ class CustomCard extends StatelessWidget {
                 children:  [
                   Text(
                    title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                     ), //Textstyle
@@ -40,7 +40,7 @@ class CustomCard extends StatelessWidget {
               ), //SizedBox
                Text(
                 subTitle,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 15,
                 ), //Textstyle
               ), //Text
@@ -55,8 +55,8 @@ class CustomCard extends StatelessWidget {
                   padding: const EdgeInsets.all(5.0),
                   textStyle: const TextStyle(fontSize: 14),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text('Configure',overflow: TextOverflow.ellipsis,),
                 ),
               )

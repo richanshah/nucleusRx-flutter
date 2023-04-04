@@ -108,8 +108,10 @@ abstract class Dimens {
   static const double listItemDeleteIconHeight = 17.34;
   static const double childBusDetailsProfileHeight = 225;
   static const double childBusDetailsProfileWidth = 190;
-  static const double childBusDetailsCardHeight = 130;
   static const double childBusDetailsCardWidth = 321;
+  static const double childBusDetailsCardHeight = 100;
+  static const double vitalsDetailsCardWidth = 341;
+  static const double vitalsDetailsCardHeight = 90;
 
   static const double splashTopBannerImageHeight = 199;
   static const double splashTopBannerImageWidth = 375;

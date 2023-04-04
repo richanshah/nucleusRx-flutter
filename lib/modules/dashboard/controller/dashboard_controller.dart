@@ -220,7 +220,7 @@ class DashboardController extends BaseGetxController {
       case AppPaths.wellness:
         {
           currentIndex.value = 2;
-          return AlertsRoutes.routes.first.createRoute(context);
+          return WellnessRoutes.routes.first.createRoute(context);
         }
       case AppPaths.messages:
         {

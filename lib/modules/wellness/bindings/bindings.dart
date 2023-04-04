@@ -1,0 +1,1 @@
+export 'wellness_bindings.dart';

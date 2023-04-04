@@ -6,7 +6,7 @@ export 'home/home.dart';
 export 'bus_list/bus_list.dart';
 export 'calendar/calendar.dart';
 export 'messages/messages.dart';
-export 'alerts/alerts.dart';
+export 'wellness/wellness.dart';
 export 'settings/settings.dart';
 export 'child_bus_details/child_bus_details.dart';
 export 'change_passcode/change_passcode.dart';

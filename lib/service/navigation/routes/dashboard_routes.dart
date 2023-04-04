@@ -15,7 +15,7 @@ class DashboardRoutes {
       children: [
         ...HomeRoutes.routes,
         ...CalendarRoutes.routes,
-        ...AlertsRoutes.routes,
+        ...WellnessRoutes.routes,
         ...MessagesRoutes.routes,
         ...SettingsRoutes.routes,
         ...ChildBusDetailsRoutes.routes,

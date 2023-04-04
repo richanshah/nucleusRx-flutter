@@ -1,9 +1,9 @@
 import 'exports.dart';
 
 class CustomDrawer extends StatefulWidget {
-
   // CustomDrawer({Key? key,required this.scaffoldKey}) : super(key: key);
   CustomDrawer({Key? key}) : super(key: key);
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
@@ -12,20 +12,21 @@ class CustomDrawer extends StatefulWidget {
 class _CustomDrawerState extends State<CustomDrawer> {
   int _selectedDrawerIndex = 0;
   int _selectedIndex = 0;
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
   toggleDrawer() async {
-    if (scaffoldKey.currentState?.isDrawerOpen == true) {
-      scaffoldKey.currentState?.closeDrawer();
+    if (widget.scaffoldKey.currentState?.isDrawerOpen == true) {
+      widget.scaffoldKey.currentState?.closeDrawer();
     } else {
-      scaffoldKey.currentState?.openDrawer();
+      widget.scaffoldKey.currentState?.openDrawer();
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -78,8 +79,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     style: TextStyle(
                       color: AppColors.darkGrayColor,
                     )),
-                onTap: () {
-                  toggleDrawer();
+                onTap: () async {
+                  await toggleDrawer();
+
                   Get.to(
                     () => const DoseListPage(),
                     duration: const Duration(milliseconds: 400), //
@@ -97,9 +99,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     style: TextStyle(
                       color: AppColors.darkGrayColor,
                     )),
-                onTap: () {
-                  toggleDrawer();
-                    Get.to(() => const ChangePasscodePage(),
+                onTap: () async {
+                  await toggleDrawer();
+                  Get.to(
+                    () => const ChangePasscodePage(),
                     duration: const Duration(milliseconds: 400),
                     transition: Transition.zoom,
                   );
@@ -117,7 +120,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     )),
                 onTap: () {
                   toggleDrawer();
-                     Get.to(() => const SettingsPage(),
+                  Get.to(
+                    () => const SettingsPage(),
                     duration: const Duration(milliseconds: 400), //
                     transition: Transition.zoom,
                   );
@@ -153,7 +157,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () {
               toggleDrawer();
               // Get.toNamed(AppPaths.deviceDetails);
-              Get.to(() => const DeviceDetailsPage(),
+              Get.to(
+                () => const DeviceDetailsPage(),
                 duration: const Duration(milliseconds: 400),
                 transition: Transition.upToDown,
               );
@@ -185,7 +190,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 navigatorKey: Get.nestedKey(null),
                 barrierDismissible: false,
               );
- /*             Get.defaultDialog(
+              /*             Get.defaultDialog(
                   buttonColor: AppColors.primaryColor,
                   title: "",
                   middleText: "Are you sure you want to logout?",
@@ -202,7 +207,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
       ),
     );
   }
-
 
   // set selected menu
   void _onSelectItem(int index) {

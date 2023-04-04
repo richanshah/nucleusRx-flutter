@@ -10,9 +10,9 @@ class ChildBusDetailsCardWithButtons
   @override
   Widget buildView(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(
+      /*margin: EdgeInsets.symmetric(
         horizontal: Dimens.padding25.w,
-      ),
+      ),*/
       child: Container(
         width: Dimens.childBusDetailsCardWidth.w,
         height: Dimens.childBusDetailsCardHeight.h,

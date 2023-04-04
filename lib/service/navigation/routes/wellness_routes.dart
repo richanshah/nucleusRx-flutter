@@ -1,14 +1,14 @@
 import '../../../../utils/exports.dart';
 
-class AlertsRoutes {
-  AlertsRoutes._();
+class WellnessRoutes {
+  WellnessRoutes._();
 
   static final routes = [
     GetPage(
       name: AppPaths.wellness,
       page: WellnessPage.new,
       preventDuplicates: true,
-      binding: AlertsBindings(),
+      binding: WellnessBindings(),
       // middlewares: [AuthMiddleWare()],
       transition: Transition.rightToLeft,
     ),
