@@ -215,7 +215,7 @@ class DashboardController extends BaseGetxController {
       case AppPaths.medSummary:
         {
           currentIndex.value = 1;
-          return CalendarRoutes.routes.first.createRoute(context);
+          return MedSummaryRoutes.routes.first.createRoute(context);
         }
       case AppPaths.wellness:
         {
@@ -227,6 +227,11 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 3;
           return MessagesRoutes.routes.first.createRoute(context);
         }
+     /* case AppPaths.medSummaryDetail:
+        {
+          currentIndex.value = 4;
+          return MedSummaryDetailsRoutes.routes.first.createRoute(context);
+        }*/
      /* case AppPaths.settings:
         {
           currentIndex.value = 4;

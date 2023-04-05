@@ -6,7 +6,7 @@ class MedSummaryPage extends BaseGetView<MedSummaryController> {
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
-      drawer:  CustomDrawer(),
+      drawer: CustomDrawer(),
       body: Column(
         children: [
           AppBar(
@@ -46,21 +46,28 @@ class MedSummaryPage extends BaseGetView<MedSummaryController> {
                           fit: BoxFit.contain,
                         ),
                         title: const Text('budesonide',
-                            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20)),
 
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
                             Text("40 mg ",
-                                style: TextStyle(fontWeight: FontWeight.w100,fontSize: 16)),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w100, fontSize: 16)),
                             Text("Once a day",
-                                style: TextStyle(fontWeight: FontWeight.normal,fontSize: 16))
+                                style: TextStyle(fontWeight: FontWeight.normal,
+                                    fontSize: 16))
                           ],
                         ),
                         visualDensity: VisualDensity.comfortable,
                         contentPadding: const EdgeInsets.all(6),
                         dense: true,
                         isThreeLine: true,
+                        onTap: () {
+                          Get.to(MedSummaryDetailPage());
+                        }
+                        ,
                       ),
                     ],
                   );

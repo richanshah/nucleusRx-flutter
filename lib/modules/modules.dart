@@ -4,7 +4,7 @@ export 'dose_list/dose_list.dart';
 export 'dashboard/dashboard.dart';
 export 'home/home.dart';
 export 'bus_list/bus_list.dart';
-export 'calendar/calendar.dart';
+export 'medsummary/medsummary.dart';
 export 'messages/messages.dart';
 export 'wellness/wellness.dart';
 export 'settings/settings.dart';

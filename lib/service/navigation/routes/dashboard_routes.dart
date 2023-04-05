@@ -14,7 +14,8 @@ class DashboardRoutes {
       transition: Transition.rightToLeft,
       children: [
         ...HomeRoutes.routes,
-        ...CalendarRoutes.routes,
+        ...MedSummaryRoutes.routes,
+        ...MedSummaryDetailsRoutes.routes,
         ...WellnessRoutes.routes,
         ...MessagesRoutes.routes,
         ...SettingsRoutes.routes,

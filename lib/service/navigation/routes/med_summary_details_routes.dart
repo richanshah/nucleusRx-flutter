@@ -1,14 +1,14 @@
 import '../../../../utils/exports.dart';
 
-class CalendarRoutes {
-  CalendarRoutes._();
+class MedSummaryDetailsRoutes {
+  MedSummaryDetailsRoutes._();
 
   static final routes = [
     GetPage(
-      name: AppPaths.medSummary,
-      page: MedSummaryPage.new,
+      name: AppPaths.medSummaryDetail,
+      page: MedSummaryDetailPage.new,
       preventDuplicates: true,
-      binding: CalendarBindings(),
+      binding: MedSummaryBindings(),
       // middlewares: [AuthMiddleWare()],
       transition: Transition.rightToLeft,
     ),

@@ -8,15 +8,14 @@ import '../../home/ui/widgets/wellness_card.dart';
 
 class WellnessPage extends BaseGetView<WellnessController> {
    WellnessPage({Key? key}) : super(key: key);
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  toggleDrawer() async {
+ /* toggleDrawer() async {
     if (scaffoldKey.currentState?.isDrawerOpen == true) {
       scaffoldKey.currentState?.closeDrawer();
     } else {
       scaffoldKey.currentState?.openDrawer();
     }
-  }
+  }*/
   @override
   Widget buildView(BuildContext context) {
 
@@ -30,7 +29,6 @@ class WellnessPage extends BaseGetView<WellnessController> {
             AppBar(
                 leading: IconButton(
                   onPressed: () {
-                    toggleDrawer();
                   },
                   icon: Image.asset(Assets.images.icLogo.path),
                 ),
