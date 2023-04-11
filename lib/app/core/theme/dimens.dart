@@ -102,7 +102,7 @@ abstract class Dimens {
   static const double appBarLeadingWidth = 50;
   static const double bottomNavigationBarHeight = 60;
   static const double childAndBusListItemHeight = 125;
-  static const double childAndDoseListItemHeight =50;
+  static const double childAndDoseListItemHeight =500;
   static const double listItemStatusIndicatorWidth = 15;
   static const double listItemProfileImageHeight = 115;
   static const double listItemDeleteIconHeight = 17.34;
@@ -111,13 +111,13 @@ abstract class Dimens {
   static const double childBusDetailsCardWidth = 321;
   static const double childBusDetailsCardHeight = 100;
   static const double vitalsDetailsCardWidth = 341;
-  static const double vitalsDetailsCardHeight = 90;
+  static const double vitalsDetailsCardHeight = 70;
 
   static const double splashTopBannerImageHeight = 199;
   static const double splashTopBannerImageWidth = 375;
   static const double splashAdsBannerImageWidth = 375;
   static const double splashAdsBannerImageHeight = 613;
-
+  static const double todayScheduleListItemHeight = 60;
   /// Extras
   static const double topEmptyBarHeight = 28;
   static const double zero = 0;

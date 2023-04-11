@@ -40,7 +40,7 @@ class DoseListItem extends StatelessWidget {
         }
       },
       child: Container(
-        height: Dimens.childAndDoseListItemHeight.h,
+        height: double.maxFinite,
         padding: EdgeInsets.only(
           bottom: Dimens.padding5.h,
           top: Dimens.padding5.h,
@@ -48,7 +48,7 @@ class DoseListItem extends StatelessWidget {
           left: Dimens.padding5.w,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(

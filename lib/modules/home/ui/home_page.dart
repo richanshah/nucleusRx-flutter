@@ -34,7 +34,7 @@ class HomePage extends BaseGetView<HomeController> {
                     color: AppColors.yellowColor,
                   ),
                   onPressed: () {
-                    // do something
+                     Get.to(const TodayScheduleListPage());
                   },
                 )
               ],
@@ -47,6 +47,7 @@ class HomePage extends BaseGetView<HomeController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SwipeableCardsSection(
+                    cardHeightBottomMul: 2,
                     context: context,
                     cardController: _cardController,
                     items: [

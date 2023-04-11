@@ -3,7 +3,7 @@ export 'login/login.dart';
 export 'dose_list/dose_list.dart';
 export 'dashboard/dashboard.dart';
 export 'home/home.dart';
-export 'bus_list/bus_list.dart';
+export 'today_schedule_list/today_schedule_list.dart';
 export 'medsummary/medsummary.dart';
 export 'messages/messages.dart';
 export 'wellness/wellness.dart';

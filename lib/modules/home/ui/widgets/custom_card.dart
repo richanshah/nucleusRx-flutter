@@ -16,6 +16,7 @@ class CustomCard extends StatelessWidget {
       color: AppColors.white,
       child: SizedBox(
         width: 350,
+        height: 300,
         child: Padding(
           padding: const EdgeInsets.all(Dimens.padding20),
           child: Column(

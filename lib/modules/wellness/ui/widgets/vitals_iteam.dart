@@ -29,7 +29,7 @@ class VitalsItemWidget extends StatelessWidget {
         }
       },
       child: Card(
-        elevation: 3,
+        elevation: 2,
          /* margin: EdgeInsets.symmetric(
             horizontal: Dimens.padding25.w,
           ),*/

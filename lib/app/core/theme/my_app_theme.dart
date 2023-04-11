@@ -275,18 +275,23 @@ abstract class MyAppTheme {
       prefixStyle: AppStyles.textNormal.copyWith(fontSize: Dimens.fontSize16),
       hintStyle: AppStyles.hintStyle.copyWith(fontSize: Dimens.fontSize16),
       labelStyle: AppStyles.hintStyle.copyWith(fontSize: Dimens.fontSize16),
-
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: appColorScheme.outline),
+      ),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: AppColors.activeBlueColor),
+      ),
       // enabledBorder: 10.outlineInputBorder(
       //   borderSide: 1.borderSide(color: appColorScheme.outline),
       // ),
-      focusedBorder: Dimens.radiusXSmall.outlineInputBorder(
+/*      focusedBorder: Dimens.radiusXSmall.outlineInputBorder(
         borderSide: Dimens.borderWidthSmall
             .borderSide(color: AppColors.activeBlueColor),
       ),
       border: Dimens.radiusXSmall.outlineInputBorder(
         borderSide:
             Dimens.borderWidthSmall.borderSide(color: appColorScheme.outline),
-      ),
+      ),*/
       focusColor: AppColors.activeBlueColor,
       hoverColor: Colors.transparent,
       errorStyle: AppStyles.errorStyle,

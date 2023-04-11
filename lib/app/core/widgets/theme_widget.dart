@@ -291,9 +291,11 @@ class ThemeWidget extends StatelessWidget {
       hintStyle: AppStyles.hintStyle.copyWith(fontSize: Dimens.fontSize16.sp),
       labelStyle: MaterialStateTextStyle.resolveWith((states) {
         if (states.contains(MaterialState.error)) {
-          return AppStyles.errorStyle.copyWith(fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
+          return AppStyles.errorStyle.copyWith(
+              fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
         }
-        return AppStyles.hintStyle.copyWith(fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
+        return AppStyles.hintStyle.copyWith(
+            fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
       }),
       focusColor: AppColors.activeBlueColor,
       hoverColor: Colors.transparent,
@@ -304,22 +306,29 @@ class ThemeWidget extends StatelessWidget {
       // enabledBorder: 10.outlineInputBorder(
       //   borderSide: 1.borderSide(color: appColorScheme.outline),
       // ),
-      focusedBorder: Dimens.radiusXSmall.r.outlineInputBorder(
-        borderSide: Dimens.borderWidthSmall.h
-            .borderSide(color: AppColors.activeBlueColor),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: appColorScheme.outline),
       ),
-      border: Dimens.radiusXSmall.r.outlineInputBorder(
-        borderSide:
-            Dimens.borderWidthSmall.h.borderSide(color: appColorScheme.outline),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: AppColors.activeBlueColor),
       ),
+      border: UnderlineInputBorder(
+        borderSide: BorderSide(color: appColorScheme.outline),
+      ),
+
       floatingLabelStyle: MaterialStateTextStyle.resolveWith((states) {
         if (states.contains(MaterialState.error)) {
-          return AppStyles.errorStyle.copyWith(fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
+          return AppStyles.errorStyle.copyWith(
+              fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
         }
         if (states.contains(MaterialState.focused)) {
-          return AppStyles.hintStyle.copyWith(fontSize: Dimens.fontSize16.sp, color: AppColors.activeBlueColor, height: Dimens.textHeightLarge);
+          return AppStyles.hintStyle.copyWith(
+              fontSize: Dimens.fontSize16.sp,
+              color: AppColors.activeBlueColor,
+              height: Dimens.textHeightLarge);
         }
-        return AppStyles.hintStyle.copyWith(fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
+        return AppStyles.hintStyle.copyWith(
+            fontSize: Dimens.fontSize16.sp, height: Dimens.textHeightLarge);
       }),
       errorBorder: Dimens.radiusXSmall.r.outlineInputBorder(
         borderSide:
@@ -397,10 +406,10 @@ class ThemeWidget extends StatelessWidget {
       unselectedIconTheme: IconThemeData(
           color: AppColors.inActiveGrayColor, size: Dimens.iconSizeRegular.w),
       unselectedItemColor: AppColors.inActiveGrayColor,
-      selectedLabelStyle: AppStyles.textNormal
-          .copyWith(fontSize: Dimens.fontSize12.sp, height: Dimens.textHeightXXLarge.h),
-      unselectedLabelStyle: AppStyles.textNormal
-          .copyWith(fontSize: Dimens.fontSize12.sp, height: Dimens.textHeightXXLarge.h),
+      selectedLabelStyle: AppStyles.textNormal.copyWith(
+          fontSize: Dimens.fontSize12.sp, height: Dimens.textHeightXXLarge.h),
+      unselectedLabelStyle: AppStyles.textNormal.copyWith(
+          fontSize: Dimens.fontSize12.sp, height: Dimens.textHeightXXLarge.h),
     );
   }
 

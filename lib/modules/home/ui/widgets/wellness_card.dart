@@ -51,11 +51,11 @@ class WellnessCard extends StatelessWidget {
                       textStyle: const TextStyle(fontSize: 14),
                     ),
                     onPressed: () async {
-                      // await controller.loginViaOTP();
-                      // controller.phoneController.clear();
-                    },
-                    child: const Text('Take wellness screening'),
-                  )
+                      if (onTap != null) {
+                        onTap();
+                      }
+                    }, child: Text('Take wellness screening'),)
+
                 ],
               ),
             ),

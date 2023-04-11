@@ -26,6 +26,7 @@ class CustomAppBar extends StatelessWidget {
                 height: Dimens.iconSizeRegular.w,
                 allowDrawingOutsideViewBox: false,
                 fit: BoxFit.none,
+                color: AppColors.white
               ),
             )
           : const SizedBox(),

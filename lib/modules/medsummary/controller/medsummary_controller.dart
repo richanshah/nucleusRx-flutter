@@ -52,7 +52,7 @@ class MedSummaryController extends BaseGetxController {
   }
 
   void onBackPressed() {
-    Get.back(id: 1);
+    Get.back();
     dashboardController.updateCurrentIndex();
   }
 

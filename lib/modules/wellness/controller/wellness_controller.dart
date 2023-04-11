@@ -1,3 +1,4 @@
+import 'package:flutter_demo_richa/modules/wellness/models/requests/quiz_paper_model.dart';
 import 'package:flutter_demo_richa/modules/wellness/models/requests/vitals_model.dart';
 
 import '../../../utils/exports.dart';
@@ -5,7 +6,22 @@ import '../../../utils/exports.dart';
 class WellnessController extends BaseGetxController {
   late final DashboardController dashboardController;
   late final RxList<VitalsModel> vitalsItem;
+  late final RxList<QuizPaperModel> questionItem;
+   RxList<String> questions = ['Question 1', 'Question 2', 'Question 3'].obs;
+   RxList<String> options = [
+    'One',
+    'Two',
+    'Three' /*,
+    'Four',
+    'Five',
+    'Six',
+    'Seven',
+    'Eight',
+    'Nine',
+    ' Ten'*/
+  ].obs;
 
+  RxMap<String, String> selectedAnswer = Map<String, String>().obs;
   @override
   void onControllerInit() {
     super.onControllerInit();
@@ -45,10 +61,24 @@ class WellnessController extends BaseGetxController {
           date: 'Today, 11:00 PM'),
 
     ].obs;
+  /*  questionItem= <QuizPaperModel>[
+      QuizPaperModel(
+          id: 1,
+          title: 'Blood Pressure',
+          questions: 'Question 1',
+      ),
+      QuizPaperModel(
+          id: 2,
+          title: 'Pulse',
+          subTitle: '80 bpm',
+          icon: Icons.health_and_safety_outlined,
+          date: 'Today, 4:00 PM'),
+
+    ].obs;*/
   }
 
   void onBackPressed() {
-    Get.back(id: 1);
+    Get.back();
     dashboardController.updateCurrentIndex();
   }
 }
