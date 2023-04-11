@@ -10,11 +10,11 @@ import '../../utils/exports.dart';
 class OtpController extends BaseGetxController {
   var switch1 = false.obs;
   var isObscure = true.obs;
-  // -------------- Text field Controller ---------------
+  /// -------------- Text field Controller ---------------
   final phoneController = TextEditingController();
   final otpController = OtpFieldController();
 
-// -------------- Local Variables ---------------
+  /// Local Variables
   String otpValue = '';
 
 }

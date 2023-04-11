@@ -1,7 +1,7 @@
 
 import 'package:flutter_demo_richa/modules/wellness/models/requests/vitals_model.dart';
 import 'package:flutter_demo_richa/modules/wellness/ui/wellness_questionarries_page.dart';
-import 'package:flutter_demo_richa/modules/wellness/ui/widgets/vitals_iteam.dart';
+import 'package:flutter_demo_richa/modules/wellness/ui/widgets/vitals_item.dart';
 
 import '../../../utils/exports.dart';
 
@@ -65,7 +65,7 @@ class WellnessPage extends BaseGetView<WellnessController> {
                           model: vitalsModel,
                           index: index,
                           onTap: (index){
-                            // Get.toNamed(AppPaths.messages, id: 1,arguments: vitalsModel);
+                            Get.to(WeightPage());
                           },
                         );
                       },

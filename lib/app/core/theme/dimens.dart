@@ -112,6 +112,7 @@ abstract class Dimens {
   static const double childBusDetailsCardHeight = 100;
   static const double vitalsDetailsCardWidth = 341;
   static const double vitalsDetailsCardHeight = 70;
+  static const double weightDetailsCardHeight = 50;
 
   static const double splashTopBannerImageHeight = 199;
   static const double splashTopBannerImageWidth = 375;

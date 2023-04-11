@@ -4,7 +4,7 @@ class ChangePasscodeController extends BaseGetxController {
   // -------------- Text field Controller ---------------
   final passCodeController = OtpFieldController();
 
-// -------------- Local Variables ---------------
+  /// Local Variables
   String otpValue = '';
 
 

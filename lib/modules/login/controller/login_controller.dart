@@ -5,11 +5,11 @@ import '../../../../utils/exports.dart';
 class LoginController extends BaseGetxController {
   var isObscure = true.obs;
 
-  // -------------- Text field Controller ---------------
+  /// Text field Controller
   final phoneController = TextEditingController();
   final otpController = OtpFieldController();
 
-// -------------- Local Variables ---------------
+  /// Local Variables
   String otpValue = '';
   RegExp digitValidator = RegExp("[0-9]+");
   bool isANumber = true;
