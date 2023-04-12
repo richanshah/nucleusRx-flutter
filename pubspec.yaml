@@ -66,6 +66,8 @@ dependencies:
   getwidget: ^2.0.4
   image_picker: ^0.8.7
   swipeable_card_stack: ^0.0.5
+  numberpicker: ^2.1.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

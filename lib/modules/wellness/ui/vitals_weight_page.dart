@@ -2,16 +2,10 @@ import 'dart:math';
 
 import '../../../utils/exports.dart';
 
-class WeightPage extends BaseGetView<WellnessController> {
+class WeightPage extends BaseGetView<WeightController> {
   WeightPage({Key? key}) : super(key: key);
 
-  /* toggleDrawer() async {
-    if (scaffoldKey.currentState?.isDrawerOpen == true) {
-      scaffoldKey.currentState?.closeDrawer();
-    } else {
-      scaffoldKey.currentState?.openDrawer();
-    }
-  }*/
+
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
@@ -23,7 +17,7 @@ class WeightPage extends BaseGetView<WellnessController> {
           mainAxisSize: MainAxisSize.max,
           children: [
             CustomAppBar(
-              title: 'Wellness screening',
+              title: 'Vitals - Weight',
               onBackPressed: controller.onBackPressed,
             ),
             Flexible(
@@ -40,34 +34,8 @@ class WeightPage extends BaseGetView<WellnessController> {
                   VerticalSpacer(
                     height: Dimens.padding3.h,
                   ),
-                  // vitalsEditorWeightWidget(controller),
+                  Obx(() => renderList(controller))
 
-                  Expanded(
-                    flex: 6,
-                    child: Obx(() =>
-                        ListView.separated(
-                          separatorBuilder: (context, index) {
-                            return Divider();
-                          },
-                          itemBuilder: (context, index) {
-                            late List? filteredList = controller.weightModel
-                                .value
-                                .where((item) => item != null && item != '' &&
-                                item.type == ( controller.selectedToggle.first==true ? 'Kg' : 'Lbs'))
-                                .toList() ?? controller.weightModel.value;
-                            WeightModel weightModel =
-                                controller.weightModel.value[index];
-                            return WeightItemWidget(
-                              model: weightModel,
-                              index: index,
-                              onTap: (index) {},
-                            );
-                          },
-                          scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                          itemCount: controller.weightModel.length,
-                        )),
-                  )
                 ],
               ),
             ),
@@ -78,10 +46,42 @@ class WeightPage extends BaseGetView<WellnessController> {
   }
 
   @override
-  String? getTag() => (WellnessPage).toString();
+  String? getTag() => (WeightPage).toString();
 }
+Widget renderList(WeightController controller) {
+  List filteredList;
 
-Widget vitalsWeightWidget(WellnessController controller) =>
+   filteredList = controller.weightModel.value
+      .where((item) => item != '' &&  item.type == ( controller.selectedToggle.first==true ? 'Kg' : 'Lbs'))
+      .toList();
+
+   if(filteredList.isEmpty)
+     {
+       filteredList=controller.weightModel.value;
+     }
+  return Expanded(
+    child:
+        ListView.separated(
+          separatorBuilder: (context, index) {
+            return Divider();
+          },
+          itemBuilder: (context, index) {
+
+            WeightModel weightModel =
+            filteredList[index];
+            return WeightItemWidget(
+              model: weightModel,
+              index: index,
+              onTap: (index) {},
+            );
+          },
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          itemCount: controller.weightModel.length,
+        ),
+  );
+}
+Widget vitalsWeightWidget(WeightController controller) =>
     Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -129,7 +129,7 @@ Widget vitalsWeightWidget(WellnessController controller) =>
       ],
     );
 
-Widget vitalsEditorWeightWidget(WellnessController controller) =>
+Widget vitalsEditorWeightWidget(WeightController controller) =>
     Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -140,8 +140,14 @@ Widget vitalsEditorWeightWidget(WellnessController controller) =>
           height: 60.h,
           child: TextFormField(
               controller: controller.weightValueController,
-              decoration: const InputDecoration(
+              decoration:  const InputDecoration(
                   border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.darkGrayColor)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.darkGrayColor)),
+                  disabledBorder:OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.darkGrayColor)),
                   focusedErrorBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: AppColors.darkGrayColor)),
                   errorBorder: OutlineInputBorder(

@@ -1,14 +1,9 @@
-
-import 'package:flutter_demo_richa/modules/wellness/models/requests/vitals_model.dart';
-import 'package:flutter_demo_richa/modules/wellness/ui/wellness_questionarries_page.dart';
-import 'package:flutter_demo_richa/modules/wellness/ui/widgets/vitals_item.dart';
-
 import '../../../utils/exports.dart';
 
 class WellnessPage extends BaseGetView<WellnessController> {
-   WellnessPage({Key? key}) : super(key: key);
+  WellnessPage({Key? key}) : super(key: key);
 
- /* toggleDrawer() async {
+  /* toggleDrawer() async {
     if (scaffoldKey.currentState?.isDrawerOpen == true) {
       scaffoldKey.currentState?.closeDrawer();
     } else {
@@ -17,9 +12,8 @@ class WellnessPage extends BaseGetView<WellnessController> {
   }*/
   @override
   Widget buildView(BuildContext context) {
-
     return Scaffold(
-      drawer:  CustomDrawer(),
+      drawer: CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -27,8 +21,7 @@ class WellnessPage extends BaseGetView<WellnessController> {
           children: [
             AppBar(
                 leading: IconButton(
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   icon: Image.asset(Assets.images.icLogo.path),
                 ),
                 actions: <Widget>[
@@ -51,21 +44,41 @@ class WellnessPage extends BaseGetView<WellnessController> {
                 children: [
                   WellnessCard(
                       title: 'Wellness screening',
-                      subTitle: 'Take all your medications on time even if you feel good',
-                      onTap: () { Get.to(WellnessQuestionsPage()); }),
+                      subTitle:
+                          'Take all your medications on time even if you feel good',
+                      onTap: () {
+                        Get.to(WellnessQuestionsPage());
+                      }),
                   Expanded(
                     child: ListView.separated(
                       separatorBuilder: (context, index) {
                         return const Divider();
                       },
                       itemBuilder: (context, index) {
-                        VitalsModel vitalsModel=controller.vitalsItem.value[index];
+                        VitalsModel vitalsModel =
+                            controller.vitalsItem.value[index];
 
                         return VitalsItemWidget(
                           model: vitalsModel,
                           index: index,
-                          onTap: (index){
-                            Get.to(WeightPage());
+                          onTap: (index) {
+                            switch (vitalsModel.id) {
+                              case 4:
+                                {
+                                  Get.to(HeightPage());
+                                }
+                                break;
+                              case 5:
+                                {
+                                  Get.to(WeightPage());
+                                }
+                                break;
+                              default:
+                                {
+                                  //statements;
+                                }
+                                break;
+                            }
                           },
                         );
                       },
@@ -82,7 +95,6 @@ class WellnessPage extends BaseGetView<WellnessController> {
       ),
     );
   }
-
 
   @override
   String? getTag() => (WellnessPage).toString();

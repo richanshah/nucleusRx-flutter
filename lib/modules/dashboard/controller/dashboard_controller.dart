@@ -227,6 +227,14 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 3;
           return MessagesRoutes.routes.first.createRoute(context);
         }
+      case AppPaths.weight:
+        {
+          return WeightRoutes.routes.first.createRoute(context);
+        }
+      case AppPaths.height:
+        {
+          return HeightRoutes.routes.first.createRoute(context);
+        }
      /* case AppPaths.medSummaryDetail:
         {
           currentIndex.value = 4;

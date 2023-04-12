@@ -18,6 +18,8 @@ abstract class AppPaths {
   static const medSummary = "/dashboard/medSummary";
   static const medSummaryDetail = "/dashboard/medSummaryDetail";
   static const wellness = '/dashboard/wellness';
+  static const height = '/dashboard/height';
+  static const weight = '/dashboard/weight';
 
   static const childBusDetails = "/dashboard/child_bus_details";
 
