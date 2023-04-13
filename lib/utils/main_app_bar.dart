@@ -13,7 +13,7 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
       child: AppBar(
         backgroundColor: AppColors.primaryColor,
           titleTextStyle: AppStyles.textMedium,
-          title:  Text(title),
+          title:  Align(alignment:Alignment.centerLeft,child: Text(title)),
           leading: GestureDetector(
             onTap: () => Get.back(),
             child: Icon(Icons.arrow_back,

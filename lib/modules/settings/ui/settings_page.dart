@@ -26,13 +26,13 @@ class SettingsPage extends BaseGetView<SettingsController> {
                   model: settingModel,
                   index: index,
                   onTap: (index){
-                    Get.toNamed(AppPaths.messages, id: 1,arguments: settingModel);
+                    Get.toNamed(AppPaths.messages,id: 1);
                   }, isOn: settingModel.isOn??true,
                 );
               },
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              itemCount: 5,
+              itemCount: controller.settingItem.value.length,
             ),
           ),
         ],

@@ -37,14 +37,14 @@ class HeightPage extends BaseGetView<HeightController> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         mainAxisSize: MainAxisSize.max,
-                        children: [
-                          controller.selectedToggle.first
-                              ? Align(
-                                  alignment: Alignment.center,
-                                  child: vitalsFtHeightWidget(controller))
-                              : Align(
-                                  alignment: Alignment.center,
-                                  child: vitalsCmsHeightWidget(controller)),
+                        children: [ Obx(() =>
+                        controller.selectedToggle.first
+                            ? Align(
+                            alignment: Alignment.center,
+                            child: vitalsFtHeightWidget(controller))
+                            : Align(
+                            alignment: Alignment.center,
+                            child: vitalsCmsHeightWidget(controller))),
                           Align(
                               alignment: Alignment.bottomCenter,
                               child: ElevatedButton(
@@ -54,7 +54,21 @@ class HeightPage extends BaseGetView<HeightController> {
                                   padding: const EdgeInsets.all(10.0),
                                   textStyle: const TextStyle(fontSize: 14),
                                 ),
-                                onPressed: () async {},
+                                onPressed: () async {
+                                  var value = controller.selectedToggle.first
+                                      ? 'Ft In'
+                                      : 'Cms';
+                                  late var result;
+                                  if (value == 'Ft In') {
+                                    result = '${controller.heightFtValue
+                                        .value}${controller.heightInValue
+                                        .value}';
+                                  }
+                                  else {
+                                    result = '${controller.heightValue.value}';
+                                  }
+                                  controller.showSnackBar(value:result);
+                                },
                                 child: const Text('Save'),
                               )),
                         ],
@@ -77,7 +91,8 @@ class HeightPage extends BaseGetView<HeightController> {
   String? getTag() => (HeightPage).toString();
 }
 
-Widget vitalsHeightWidget(HeightController controller) => Row(
+Widget vitalsHeightWidget(HeightController controller) =>
+    Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
@@ -90,7 +105,8 @@ Widget vitalsHeightWidget(HeightController controller) => Row(
             color: AppColors.blueColor,
           ),
         ),
-        Obx(() => ToggleButtons(
+        Obx(() =>
+            ToggleButtons(
               direction: Axis.horizontal,
               onPressed: (int index) {
                 controller.changeTabIndex(index);
@@ -110,73 +126,69 @@ Widget vitalsHeightWidget(HeightController controller) => Row(
       ],
     );
 
-Widget vitalsCmsHeightWidget(HeightController controller) => Row(
+Widget vitalsCmsHeightWidget(HeightController controller) =>
+    Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: [
         Wrap(children: [
-          Obx(
-            () => NumberPicker(
-                itemWidth: 50,
-                itemHeight: 50,
-                axis: Axis.vertical,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom:
-                        BorderSide(width: 1.0, color: AppColors.darkGrayColor),
-                  ),
+          NumberPicker(
+              itemWidth: 50,
+              itemHeight: 50,
+              axis: Axis.vertical,
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom:
+                  BorderSide(width: 1.0, color: AppColors.darkGrayColor),
                 ),
-                value: controller.heightValue.value,
-                minValue: controller.minValue.value,
-                maxValue: controller.maxValue.value,
-                onChanged: (value) => controller.heightValue.value = value),
-          )
+              ),
+              value: controller.heightValue.value,
+              minValue: controller.minValue.value,
+              maxValue: controller.maxValue.value,
+              onChanged: (value) => controller.heightValue.value = value),
         ])
       ],
     );
 
-Widget vitalsFtHeightWidget(HeightController controller) => Row(
+Widget vitalsFtHeightWidget(HeightController controller) =>
+    Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: [
         Wrap(children: [
-          Obx(
-            () => NumberPicker(
-                itemWidth: 50,
-                itemHeight: 50,
-                axis: Axis.vertical,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom:
-                        BorderSide(width: 1.0, color: AppColors.darkGrayColor),
-                  ),
+          NumberPicker(
+              itemWidth: 50,
+              itemHeight: 50,
+              axis: Axis.vertical,
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom:
+                  BorderSide(width: 1.0, color: AppColors.darkGrayColor),
                 ),
-                value: controller.heightFtValue.value,
-                minValue: controller.minValue.value,
-                maxValue: controller.maxValue.value,
-                onChanged: (value) => controller.heightFtValue.value = value),
-          ),
+              ),
+              value: controller.heightFtValue.value,
+              minValue: controller.minValue.value,
+              maxValue: controller.maxValue.value,
+              onChanged: (value) => controller.heightFtValue.value = value),
           VerticalSpacer(
             height: Dimens.padding4.h,
           ),
-          Obx(
-            () => NumberPicker(
-                itemWidth: 50,
-                itemHeight: 50,
-                axis: Axis.vertical,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom:
-                        BorderSide(width: 1.0, color: AppColors.darkGrayColor),
-                  ),
+          NumberPicker(
+              itemWidth: 50,
+              itemHeight: 50,
+              axis: Axis.vertical,
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom:
+                  BorderSide(width: 1.0, color: AppColors.darkGrayColor),
                 ),
-                value: controller.heightInValue.value,
-                minValue: controller.minValue.value,
-                maxValue: controller.maxValue.value,
-                onChanged: (value) => controller.heightInValue.value = value),
-          ),
+              ),
+              value: controller.heightInValue.value,
+              minValue: controller.minValue.value,
+              maxValue: controller.maxValue.value,
+              onChanged: (value) => controller.heightInValue.value = value),
         ])
       ],
     );

@@ -43,7 +43,7 @@ class SettingsListItem extends StatelessWidget {
         }
       },
       child: Container(
-        height: Dimens.childAndDoseListItemHeight.h,
+        height: Dimens.notificationListItemHeight.h,
         padding: EdgeInsets.only(
           bottom: Dimens.padding5.h,
           top: Dimens.padding5.h,
@@ -56,7 +56,7 @@ class SettingsListItem extends StatelessWidget {
           children: [
             Align(
               alignment: Alignment.centerLeft,
-              child: Image.asset(Assets.images.icWellness.path)??Icon(model.icon??Icons.add),
+              child: Image.asset(Assets.images.icWellness.path),
             ),
             Expanded(
               child: Padding(

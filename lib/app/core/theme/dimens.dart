@@ -103,6 +103,7 @@ abstract class Dimens {
   static const double bottomNavigationBarHeight = 60;
   static const double childAndBusListItemHeight = 125;
   static const double childAndDoseListItemHeight =500;
+  static const double notificationListItemHeight =70;
   static const double listItemStatusIndicatorWidth = 15;
   static const double listItemProfileImageHeight = 115;
   static const double listItemDeleteIconHeight = 17.34;
