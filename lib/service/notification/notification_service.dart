@@ -20,17 +20,9 @@ class NotificationService {
     const AndroidInitializationSettings initializationSettingsAndroid =
     AndroidInitializationSettings('ic_stat_justwater');
 
-    final IOSInitializationSettings initializationSettingsIOS =
-    IOSInitializationSettings(
-        requestSoundPermission: true,
-        requestBadgePermission: true,
-        requestAlertPermission: true,
-        onDidReceiveLocalNotification: onDidReceiveLocalNotification);
-
     final InitializationSettings initializationSettings =
     InitializationSettings(
       android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,
     );
 
     tz.initializeTimeZones();
@@ -41,8 +33,7 @@ class NotificationService {
     );
 
     await _localNotifications.initialize(
-      initializationSettings,
-      onSelectNotification: selectNotification,
+      initializationSettings
     );
   }
 
@@ -69,19 +60,9 @@ class NotificationService {
       color: const Color(0xff2196f3),
     );
 
-    IOSNotificationDetails iosNotificationDetails = IOSNotificationDetails(
-        threadIdentifier: "thread1",
-        attachments: <IOSNotificationAttachment>[
-          IOSNotificationAttachment(bigPicture)
-        ]);
-
-    final details = await _localNotifications.getNotificationAppLaunchDetails();
-    if (details != null && details.didNotificationLaunchApp) {
-      behaviorSubject.add(details.payload!);
-    }
 
     NotificationDetails platformChannelSpecifics = NotificationDetails(
-        android: androidPlatformChannelSpecifics, iOS: iosNotificationDetails);
+        android: androidPlatformChannelSpecifics);
 
     return platformChannelSpecifics;
   }
@@ -113,16 +94,15 @@ class NotificationService {
       color: Color(0xff2196f3),
     );
 
-    const IOSNotificationDetails iosNotificationDetails =
-    IOSNotificationDetails(threadIdentifier: "thread2");
+
 
     final details = await _localNotifications.getNotificationAppLaunchDetails();
     if (details != null && details.didNotificationLaunchApp) {
-      behaviorSubject.add(details.payload!);
+      behaviorSubject.add(details! as String);
     }
 
     NotificationDetails platformChannelSpecifics = NotificationDetails(
-        android: androidPlatformChannelSpecifics, iOS: iosNotificationDetails);
+        android: androidPlatformChannelSpecifics);
 
     return platformChannelSpecifics;
   }

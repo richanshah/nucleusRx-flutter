@@ -1,18 +1,35 @@
-import 'package:flutter_demo_richa/service/navigation/routes/change_passcode_routes.dart';
 
+import 'package:flutter/foundation.dart';
+
+import '../../../service/notification/notification_services.dart';
 import '../../../utils/exports.dart';
 
 class DashboardController extends BaseGetxController {
   late final String desiredRoute;
   late final Map<String, String?>? parameters;
+  NotificationServices notificationServices = NotificationServices();
 
   @override
   void onControllerInit() {
     super.onControllerInit();
+
     desiredRoute = Get.currentRoute;
     parameters = Get.parameters;
   }
 
+  void initNotification(BuildContext context)
+  {
+    notificationServices.requestNotificationPermission();
+    notificationServices.firebaseInit(context);
+    notificationServices.setupInteractMessage(context);
+    notificationServices.isTokenRefresh();
+    notificationServices.getDeviceToken().then((value){
+      if (kDebugMode) {
+        print('device token');
+        print(value);
+      }
+    });
+  }
   /// [List] of [BottomNavigationBarItem] for [BottomNavigationBar].
   List<BottomNavigationBarItem> navigationItemList() => [
         BottomNavigationBarItem(
@@ -222,10 +239,63 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 2;
           return WellnessRoutes.routes.first.createRoute(context);
         }
-      case AppPaths.messages:
+     /* case AppPaths.messages:
         {
           currentIndex.value = 3;
           return MessagesRoutes.routes.first.createRoute(context);
+        }*/
+      case AppPaths.messages:
+        {
+          currentIndex.value = 3;
+          final r = MessagesRoutes.routes.first;
+          return GetPageRoute(
+            page: r.page,
+            parameter: r.parameters,
+            alignment: r.alignment,
+            title: r.title,
+            maintainState: r.maintainState,
+            routeName: r.name,
+            settings: settings,
+            curve: r.curve,
+            showCupertinoParallax: r.showCupertinoParallax,
+            gestureWidth: r.gestureWidth,
+            opaque: r.opaque,
+            customTransition: r.customTransition,
+            binding: r.binding,
+            bindings: r.bindings,
+            transitionDuration:
+            r.transitionDuration ?? Get.defaultTransitionDuration,
+            transition: r.transition,
+            popGesture: r.popGesture,
+            fullscreenDialog: r.fullscreenDialog,
+            middlewares: r.middlewares,
+          );
+        }
+      case AppPaths.settings:
+        {
+          final r = SettingsRoutes.routes.first;
+          return GetPageRoute(
+            page: r.page,
+            parameter: r.parameters,
+            alignment: r.alignment,
+            title: r.title,
+            maintainState: r.maintainState,
+            routeName: r.name,
+            settings: settings,
+            curve: r.curve,
+            showCupertinoParallax: r.showCupertinoParallax,
+            gestureWidth: r.gestureWidth,
+            opaque: r.opaque,
+            customTransition: r.customTransition,
+            binding: r.binding,
+            bindings: r.bindings,
+            transitionDuration:
+            r.transitionDuration ?? Get.defaultTransitionDuration,
+            transition: r.transition,
+            popGesture: r.popGesture,
+            fullscreenDialog: r.fullscreenDialog,
+            middlewares: r.middlewares,
+          );
         }
       case AppPaths.weight:
         {

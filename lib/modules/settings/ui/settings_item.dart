@@ -38,9 +38,7 @@ class SettingsListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (onTap != null) {
           onTap!(index);
-        }
       },
       child: Container(
         height: Dimens.notificationListItemHeight.h,

@@ -5,6 +5,7 @@ class DashboardPage extends BaseGetView<DashboardController> {
 
   @override
   Widget buildView(BuildContext context) {
+    controller.initNotification(context);
     return WillPopScope(
       onWillPop: controller.onWillPop,
       child: Scaffold(

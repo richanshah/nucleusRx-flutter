@@ -1,4 +1,6 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'utils/exports.dart';
 
@@ -6,11 +8,19 @@ void main() => AppInitializer.init(() async {
       Get.put(MainController(),
           permanent: true, tag: (MainController).toString());
       setPathUrlStrategy();
+      WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp();
+      FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
       runApp(
           const MyApp() /*DevicePreview(
           enabled: kDebugMode && !kIsWeb, builder: (context) => const MyApp())*/
           );
     });
+
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message)async {
+  await Firebase.initializeApp();
+}
 
 class MyApp extends GetView<MainController> {
   const MyApp({Key? key}) : super(key: key);

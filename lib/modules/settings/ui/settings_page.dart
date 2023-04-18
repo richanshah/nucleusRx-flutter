@@ -26,7 +26,7 @@ class SettingsPage extends BaseGetView<SettingsController> {
                   model: settingModel,
                   index: index,
                   onTap: (index){
-                    Get.toNamed(AppPaths.messages,id: 1);
+                    Get.to(MessagesPage()/*,arguments:  {'settingModel': settingModel}*/);
                   }, isOn: settingModel.isOn??true,
                 );
               },
