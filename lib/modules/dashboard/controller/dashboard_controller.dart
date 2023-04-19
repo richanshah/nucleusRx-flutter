@@ -1,6 +1,7 @@
 
 import 'package:flutter/foundation.dart';
 
+import '../../../service/navigation/routes/change_passcode_routes.dart';
 import '../../../service/notification/notification_services.dart';
 import '../../../utils/exports.dart';
 
@@ -124,16 +125,6 @@ class DashboardController extends BaseGetxController {
           path = AppPaths.wellness;
           break;
         }
-      case 3:
-        {
-          path = AppPaths.messages;
-          break;
-        }
-      case 4:
-        {
-          path = AppPaths.settings;
-          break;
-        }
       default:
         {
           path = '/';
@@ -182,26 +173,8 @@ class DashboardController extends BaseGetxController {
           currentIndex.value = 2;
           break;
         }
-      case AppPaths.messages:
-        {
-          currentIndex.value = 3;
-          break;
-        }
-      case AppPaths.settings:
-        {
-          currentIndex.value = 4;
-          break;
-        }
-      case AppPaths.childBusDetails:
-        {
-          currentIndex.value = 5;
-          break;
-        }
-      case AppPaths.changePasscode:
-        {
-          currentIndex.value = 6;
-          break;
-        }
+
+
     }
   }
 
@@ -246,7 +219,6 @@ class DashboardController extends BaseGetxController {
         }*/
       case AppPaths.messages:
         {
-          currentIndex.value = 3;
           final r = MessagesRoutes.routes.first;
           return GetPageRoute(
             page: r.page,
@@ -305,26 +277,18 @@ class DashboardController extends BaseGetxController {
         {
           return HeightRoutes.routes.first.createRoute(context);
         }
-     /* case AppPaths.medSummaryDetail:
+      case AppPaths.medSummaryDetail:
         {
-          currentIndex.value = 4;
           return MedSummaryDetailsRoutes.routes.first.createRoute(context);
-        }*/
-     /* case AppPaths.settings:
-        {
-          currentIndex.value = 4;
-          return SettingsRoutes.routes.first.createRoute(context);
         }
       case AppPaths.childBusDetails:
         {
-          currentIndex.value = 5;
           return ChildBusDetailsRoutes.routes.first.createRoute(context);
         }
       case AppPaths.changePasscode:
         {
-          currentIndex.value = 6;
           return ChangePasscodeRoutes.routes.first.createRoute(context);
-        }*/
+        }
     }
     return null;
   }

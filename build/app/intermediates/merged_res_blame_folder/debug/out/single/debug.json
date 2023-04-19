@@ -1,58 +1,58 @@
 [
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable-v21_launch_background.xml.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable-v21/launch_background.xml"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable-xxhdpi_ic_stat_justwater.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable-xxhdpi/ic_stat_justwater.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable-xxxhdpi_ic_stat_justwater.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable-xxxhdpi/ic_stat_justwater.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable_justwater.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable/justwater.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable_justwater.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable/justwater.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable_ic_stat_justwater.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable/ic_stat_justwater.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable_launch_background.xml.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable/launch_background.xml"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable-xxxhdpi_ic_stat_justwater.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable-xxxhdpi/ic_stat_justwater.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable_launch_background.xml.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable/launch_background.xml"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable-xxhdpi_ic_stat_justwater.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable-xxhdpi/ic_stat_justwater.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable-xhdpi_ic_stat_justwater.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable-xhdpi/ic_stat_justwater.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable-v21_ic_stat_justwater.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable-v21/ic_stat_justwater.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable-v21_ic_stat_justwater.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable-v21/ic_stat_justwater.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable-xhdpi_ic_stat_justwater.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable-xhdpi/ic_stat_justwater.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable_ic_stat_justwater.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable/ic_stat_justwater.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable_drink.png.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable/drink.png"
     },
     {
-        "merged": "com.base.flutter.demo.app-merged_res-19:/drawable_drink.png.flat",
-        "source": "com.base.flutter.demo.app-main-13:/drawable/drink.png"
+        "merged": "com.base.flutter.demo.app-merged_res-25:/drawable-v21_launch_background.xml.flat",
+        "source": "com.base.flutter.demo.app-main-18:/drawable-v21/launch_background.xml"
     }
 ]

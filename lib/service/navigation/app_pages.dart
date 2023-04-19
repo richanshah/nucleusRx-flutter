@@ -21,5 +21,14 @@ class AppPages {
     ...LoginRoutes.routes,
     ...OtpRoutes.routes,
     ...DashboardRoutes.routes,
+    ...HomeRoutes.routes,
+    ...MedSummaryRoutes.routes,
+    ...MedSummaryDetailsRoutes.routes,
+    ...WellnessRoutes.routes,
+    ...HeightRoutes.routes,
+    ...WeightRoutes.routes,
+    ...MessagesRoutes.routes,
+    ...SettingsRoutes.routes,
+    ...ChildBusDetailsRoutes.routes,
   ];
 }

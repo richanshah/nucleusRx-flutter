@@ -5,14 +5,13 @@ import '../../../utils/exports.dart';
 class MessagesController extends BaseGetxController {
   /// use for setting notification item details
   late final SettingsModel settingsModel;
-  late final int args;
 
-  /// For checking where user comes from
-  bool isFromLoginScreen = true;
 
   @override
   void onControllerInit() {
     super.onControllerInit();
+    settingsModel = (Get.arguments as Map<String, dynamic>)['settingsModel'] as SettingsModel;
+    print('$settingsModel');
 
   /*  settingsModel = SettingsModel(
         title: 'Wellness screening',
@@ -24,15 +23,11 @@ class MessagesController extends BaseGetxController {
   }
 
   void onBackPressed() {
-    Get.back(id: 1);
+    Get.back();
   }
 
   @override
   void onControllerReady() {
     super.onControllerReady();
-    settingsModel = (Get.parameters)['settingsModel'] as SettingsModel;
-    // print('$settingsModel');
- /*   isFromLoginScreen = Get.parameters['isFromLogin'] == 'true';
-    print('$isFromLoginScreen');*/
   }
 }

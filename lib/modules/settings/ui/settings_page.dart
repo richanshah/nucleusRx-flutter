@@ -5,7 +5,6 @@ import '../../../utils/exports.dart';
 class SettingsPage extends BaseGetView<SettingsController> {
   const SettingsPage({Key? key}) : super(key: key);
 
-
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
@@ -20,19 +19,27 @@ class SettingsPage extends BaseGetView<SettingsController> {
                 return const Divider();
               },
               itemBuilder: (context, index) {
-                SettingsModel settingModel=controller.settingItem.value[index];
+                SettingsModel settingModel =
+                    controller.settingItem.value[index];
 
                 return SettingsListItem(
                   model: settingModel,
                   index: index,
-                  onTap: (index){
-                    Get.to(MessagesPage()/*,arguments:  {'settingModel': settingModel}*/);
-                  }, isOn: settingModel.isOn??true,
+                  onTap: (index) {
+                    Get.toNamed(
+                      AppPaths.messages,
+                        parameters: {'isFromLogin': 'false'},
+                      arguments: {
+                        'settingsModel' : settingModel,
+                      },
+                    );
+                  },
+                  isOn: settingModel.isOn ?? true,
                 );
               },
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              itemCount: controller.settingItem.value.length,
+              itemCount: controller.settingItem.length,
             ),
           ),
         ],

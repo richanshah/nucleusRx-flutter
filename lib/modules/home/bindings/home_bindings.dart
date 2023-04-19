@@ -14,6 +14,6 @@ class HomeBindings extends Bindings {
     Get.put(DeviceDetailsController(), tag: (DeviceDetailsPage).toString());
     Get.put(UserDetailsController(), tag: (UserDetailsPage).toString());
     Get.put(SettingsController(), tag: (SettingsPage).toString());
-    Get.put(MessagesController(), tag: (MessagesPage).toString());
+    // Get.put(MessagesController(), tag: (MessagesPage).toString());
   }
 }

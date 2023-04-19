@@ -26,7 +26,7 @@ class SettingsListItem extends StatelessWidget {
   ///
   /// Note: We have to add model in the parameters
   /// of this function same as position.
-  final Function(int postion)? onTap;
+   final Function(int postion)? onTap;
 
   /// Function to be called when user tap on next icon.
   ///
@@ -37,8 +37,8 @@ class SettingsListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-          onTap!(index);
+      onTap: (){
+        onTap!.call(index);
       },
       child: Container(
         height: Dimens.notificationListItemHeight.h,

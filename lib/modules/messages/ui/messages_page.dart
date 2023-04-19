@@ -73,74 +73,39 @@ class _MessageWidgetState extends State<MessageWidget> {
   Widget build(BuildContext context) {
 
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       mainAxisSize: MainAxisSize.max,
-      // crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Spacer(),
         Expanded(
-          flex: 2,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Image.asset(Assets.images.icWellness.path),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      // Text will be static as of now,
-                      // But in future we will remove and add
-                      // texts coming from apis.
-                      model.title ?? '--',
-                      style: AppStyles.textNormal.copyWith(
-                        fontSize: Dimens.fontSize16.sp,
-                        color: AppColors.bodyTextColor,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
+              Expanded(
+                child: ListTile(
+                  horizontalTitleGap: 8,
+                  contentPadding: const EdgeInsets.all(8),
+                  leading:  const Icon(Icons.notification_important_rounded,color: AppColors.primaryColor),
+                  minVerticalPadding: 20,
+                  title:  Text( model.title ?? '--',
+                      style: const TextStyle(color: AppColors.primaryColor)),
+                  dense: true,
+                  subtitle: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          model.subTitle ?? '--',
+                          style: const TextStyle(color: AppColors.primaryColor)),
 
-                    // Text will be static as of now,
-                    // But in future we will remove and add
-                    // texts coming from apis.
-                  ],
-                ),
-              ),
-
-            ],
-          ),
-        ),
-        Expanded(
-          flex: 3,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  maxLines: 2,
-                  textDirection: TextDirection.ltr,
-                  textAlign: TextAlign.justify,
-                  overflow: TextOverflow.ellipsis,
-                  softWrap: true,
-                  // Text will be static as of now,
-                  // But in future we will remove and add
-                  // texts coming from apis.
-                  model.subTitle ?? '--',
-                  style: AppStyles.textNormal.copyWith(
-                    fontSize: Dimens.fontSize16.sp,
-                    color: AppColors.bodyTextColor.shade400,
-                    overflow: TextOverflow.ellipsis,
+                    ],
                   ),
                 ),
               ),
-            ),
+
+
+            ],
           ),
         ),
         ElevatedButton(
